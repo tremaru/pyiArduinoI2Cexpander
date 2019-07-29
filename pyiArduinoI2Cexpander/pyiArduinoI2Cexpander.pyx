@@ -76,8 +76,8 @@ cdef class pyiArduinoI2Cexpander:
 	def getVersion(self):
 		return self.c_expander.getVersion()
 
-	def pinMode(self, unsigned char pin, unsigned char io_dir, unsigned char io_type=None):
-		if io_type is not None:
+	def pinMode(self, unsigned char pin, unsigned char io_dir, unsigned char io_type=DIGITAL):
+		if io_type is not DIGITAL:
 			self.c_expander.pinMode(pin, io_dir, io_type)
 		else:
 			self.c_expander.pinMode(pin, io_dir, DIGITAL)
@@ -86,7 +86,7 @@ cdef class pyiArduinoI2Cexpander:
 		self.c_expander.pinPull(pin, pull)
 
 	def pinOutScheme(self, unsigned char pin, unsigned char mode):
-		self.c_expander.pinMode(pin, mode)
+		self.c_expander.pinOutScheme(pin, mode)
 
 	def digitalWrite(self, unsigned char pin, unsigned char level):
 		self.c_expander.digitalWrite(pin, level)
@@ -104,7 +104,7 @@ cdef class pyiArduinoI2Cexpander:
 		self.c_expander.analogAveraging(coefficient)
 
 	def levelWrite(self, unsigned short level):
-		self.c_expander.levelWrite(level):
+		self.c_expander.levelWrite(level)
 
 	def levelRead(self, unsigned char pin):
 		return self.c_expander.levelRead(pin)

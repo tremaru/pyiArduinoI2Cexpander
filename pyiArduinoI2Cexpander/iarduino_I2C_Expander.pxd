@@ -1,7 +1,7 @@
 cdef extern from "iarduino_I2C_Expander.cpp":
 	pass
 
-def extern from "iarduino_I2C_Expander.h":
+cdef extern from "iarduino_I2C_Expander.h":
 	cdef cppclass iarduino_I2C_Expander:
 		iarduino_I2C_Expander() except +
 		iarduino_I2C_Expander(unsigned char) except +
