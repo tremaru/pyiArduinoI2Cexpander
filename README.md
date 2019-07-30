@@ -10,7 +10,7 @@
 
 Установка из репозиториев PyPI в терминале Raspberry:
 
-`pip3 install pyiArduinoI2Ciexpander`
+`sudo pip3 install pyiArduinoI2Ciexpander`
 
 Самостоятельная сборка из исходников:
 
