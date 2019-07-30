@@ -411,6 +411,11 @@ bool	iarduino_I2C_Expander::_writeBytes	(uint8_t reg, uint8_t sum, uint8_t num){
 			return result;																								//	Возвращаем результат записи (true/false).
 }																														//
 																														//
+void iarduino_I2C_Expander::changeBus(const char* bus){
+  objI2C->changeBus((char*)bus);
+  this->begin();
+}
+
 long iarduino_I2C_Expander::map(long x, long in_min, long in_max, long out_min, long out_max)
 {
   return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
