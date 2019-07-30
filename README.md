@@ -1,8 +1,19 @@
 [![](https://iarduino.ru/img/logo.svg)](https://iarduino.ru)[![](https://wiki.iarduino.ru/img/git-shop.svg?3)](https://iarduino.ru) [![](https://wiki.iarduino.ru/img/git-wiki.svg?2)](https://wiki.iarduino.ru) [![](https://wiki.iarduino.ru/img/git-lesson.svg?2)](https://lesson.iarduino.ru)[![](https://wiki.iarduino.ru/img/git-forum.svg?2)](http://forum.trema.ru)
 
-# pyiArduinoI2Crelay
+# pyiArduinoI2Crelay #
 
-**Данная библилотека (модуль) позволяет управлять электронными модулями (устройствами) твердотельных реле, механических реле и силовых ключей от iArduino.ru по шине I2C на Raspberry Pi c версией платы 2.0 (выпускаемые после 2012 года).**
+**Данная библилотека (модуль для Python3) позволяет управлять электронными модулями (устройствами) расширения выводов Expander и Trema Expander Hat от iArduino.ru по шине I2C на Raspberry Pi.**
 
+## Установка ##
 
-**This is a Python3 module for Raspberry Pi, board rev2 (made after 2012). It can control solid state relays, mechanical relays and power mosfet modules made by iarduino.ru via I2C bus.**
+[Статья на сайте iarduino.cu](https://wiki.iarduino.ru/page/raspberry-python-modules/)
+
+Установка из репозиториев PyPI в терминале Raspberry:
+
+`pip3 install pyiArduinoI2Ciexpander`
+
+Самостоятельная сборка из исходников:
+
+`cd pyiArduinoI2Cexpander && python3 setup.py build_ext --inplace`
+
+**This is a Python3 module for Raspberry Pi. It can work with Trema Expander i2c module and Trema Expander Hat by iarduino.ru**
