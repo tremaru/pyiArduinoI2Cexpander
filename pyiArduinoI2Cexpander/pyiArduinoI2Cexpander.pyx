@@ -94,7 +94,7 @@ cdef class pyiArduinoI2Cexpander:
 	def digitalRead(self, unsigned char pin):
 		return self.c_expander.digitalRead(pin)
 
-	def analogWrite(self, unsigned char pin, unsigned char level):
+	def analogWrite(self, unsigned char pin, unsigned short level):
 		self.c_expander.analogWrite(pin, level)
 
 	def analogRead(self, unsigned char pin):

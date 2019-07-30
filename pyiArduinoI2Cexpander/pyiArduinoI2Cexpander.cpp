@@ -1332,7 +1332,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_14pinP
 static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_16pinOutScheme(struct __pyx_obj_21pyiArduinoI2Cexpander_pyiArduinoI2Cexpander *__pyx_v_self, unsigned char __pyx_v_pin, unsigned char __pyx_v_mode); /* proto */
 static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_18digitalWrite(struct __pyx_obj_21pyiArduinoI2Cexpander_pyiArduinoI2Cexpander *__pyx_v_self, unsigned char __pyx_v_pin, unsigned char __pyx_v_level); /* proto */
 static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_20digitalRead(struct __pyx_obj_21pyiArduinoI2Cexpander_pyiArduinoI2Cexpander *__pyx_v_self, unsigned char __pyx_v_pin); /* proto */
-static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_22analogWrite(struct __pyx_obj_21pyiArduinoI2Cexpander_pyiArduinoI2Cexpander *__pyx_v_self, unsigned char __pyx_v_pin, unsigned char __pyx_v_level); /* proto */
+static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_22analogWrite(struct __pyx_obj_21pyiArduinoI2Cexpander_pyiArduinoI2Cexpander *__pyx_v_self, unsigned char __pyx_v_pin, unsigned short __pyx_v_level); /* proto */
 static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_24analogRead(struct __pyx_obj_21pyiArduinoI2Cexpander_pyiArduinoI2Cexpander *__pyx_v_self, unsigned char __pyx_v_pin); /* proto */
 static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_26analogAveraging(struct __pyx_obj_21pyiArduinoI2Cexpander_pyiArduinoI2Cexpander *__pyx_v_self, unsigned char __pyx_v_coefficient); /* proto */
 static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_28levelWrite(struct __pyx_obj_21pyiArduinoI2Cexpander_pyiArduinoI2Cexpander *__pyx_v_self, unsigned short __pyx_v_level); /* proto */
@@ -2362,7 +2362,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_20digi
  * 	def digitalRead(self, unsigned char pin):
  * 		return self.c_expander.digitalRead(pin)             # <<<<<<<<<<<<<<
  * 
- * 	def analogWrite(self, unsigned char pin, unsigned char level):
+ * 	def analogWrite(self, unsigned char pin, unsigned short level):
  */
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_1 = __Pyx_PyInt_From_unsigned_char(__pyx_v_self->c_expander.digitalRead(__pyx_v_pin)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 95, __pyx_L1_error)
@@ -2393,7 +2393,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_20digi
 /* "pyiArduinoI2Cexpander.pyx":97
  * 		return self.c_expander.digitalRead(pin)
  * 
- * 	def analogWrite(self, unsigned char pin, unsigned char level):             # <<<<<<<<<<<<<<
+ * 	def analogWrite(self, unsigned char pin, unsigned short level):             # <<<<<<<<<<<<<<
  * 		self.c_expander.analogWrite(pin, level)
  * 
  */
@@ -2402,7 +2402,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_20digi
 static PyObject *__pyx_pw_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_23analogWrite(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static PyObject *__pyx_pw_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_23analogWrite(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   unsigned char __pyx_v_pin;
-  unsigned char __pyx_v_level;
+  unsigned short __pyx_v_level;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("analogWrite (wrapper)", 0);
@@ -2442,7 +2442,7 @@ static PyObject *__pyx_pw_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_23anal
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
     __pyx_v_pin = __Pyx_PyInt_As_unsigned_char(values[0]); if (unlikely((__pyx_v_pin == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(1, 97, __pyx_L3_error)
-    __pyx_v_level = __Pyx_PyInt_As_unsigned_char(values[1]); if (unlikely((__pyx_v_level == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(1, 97, __pyx_L3_error)
+    __pyx_v_level = __Pyx_PyInt_As_unsigned_short(values[1]); if (unlikely((__pyx_v_level == (unsigned short)-1) && PyErr_Occurred())) __PYX_ERR(1, 97, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
@@ -2459,14 +2459,14 @@ static PyObject *__pyx_pw_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_23anal
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_22analogWrite(struct __pyx_obj_21pyiArduinoI2Cexpander_pyiArduinoI2Cexpander *__pyx_v_self, unsigned char __pyx_v_pin, unsigned char __pyx_v_level) {
+static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_22analogWrite(struct __pyx_obj_21pyiArduinoI2Cexpander_pyiArduinoI2Cexpander *__pyx_v_self, unsigned char __pyx_v_pin, unsigned short __pyx_v_level) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("analogWrite", 0);
 
   /* "pyiArduinoI2Cexpander.pyx":98
  * 
- * 	def analogWrite(self, unsigned char pin, unsigned char level):
+ * 	def analogWrite(self, unsigned char pin, unsigned short level):
  * 		self.c_expander.analogWrite(pin, level)             # <<<<<<<<<<<<<<
  * 
  * 	def analogRead(self, unsigned char pin):
@@ -2476,7 +2476,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_22anal
   /* "pyiArduinoI2Cexpander.pyx":97
  * 		return self.c_expander.digitalRead(pin)
  * 
- * 	def analogWrite(self, unsigned char pin, unsigned char level):             # <<<<<<<<<<<<<<
+ * 	def analogWrite(self, unsigned char pin, unsigned short level):             # <<<<<<<<<<<<<<
  * 		self.c_expander.analogWrite(pin, level)
  * 
  */
