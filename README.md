@@ -6,7 +6,7 @@
 
 ## Установка ##
 
-[Статья на сайте iarduino.cu](https://wiki.iarduino.ru/page/raspberry-python-modules/)
+[Статья на сайте iarduino.ru](https://wiki.iarduino.ru/page/raspberry-python-modules/)
 
 Установка из репозиториев PyPI в терминале Raspberry:
 
