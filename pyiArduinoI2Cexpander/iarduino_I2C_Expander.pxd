@@ -25,3 +25,5 @@ cdef extern from "iarduino_I2C_Expander.h":
 		void servoAttach(unsigned char, unsigned short, unsigned short, unsigned short, unsigned short)
 		void servoWrite(unsigned char, unsigned short)
 		void servoWriteMicroseconds(unsigned char, unsigned short)
+		long map(long, long, long, long, long)
+		void changeBus(char*)

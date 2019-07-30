@@ -123,3 +123,9 @@ cdef class pyiArduinoI2Cexpander:
 
 	def servoWriteMicroseconds(self, unsigned char pin, unsigned short width):
 		self.c_expander.servoWriteMicroseconds(pin, width)
+
+	def changeBus(self, char* bus):
+		self.c_expander.changeBus(bus)
+
+	def mymap(self, long x, long in_min, long in_max, long out_min, long out_max):
+		return self.c_expander.map(x, in_min, in_max, out_min, out_max)
