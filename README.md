@@ -14,6 +14,17 @@
 
 Самостоятельная сборка из исходников:
 
-`cd pyiArduinoI2Cexpander && python3 setup.py build_ext --inplace`
+`git clone https://github.com/tremaru/pyiArduinoI2Cexpander.git && cd pyiArduinoI2Cexpander/pyiArduinoI2Cexpander && python3 setup.py build_ext --inplace`
+
+Примеры для Python находятся в папке `pyiArduinoI2Cexpander/examples`
+
+Примеры для С++ находятся в папке `pyiArduinoI2Cexpander/cpp`. Так же в этой папке лежит *Makefile* для сборки
+из исходников. Можно собрать сразу все примеры командой:
+  `make all` или `make`
+Для сборки конкретного примера: `make "название примера"`
+Например:
+  `make reset`
+Для удаления собранных исполняемых файлов:
+  `make clean`
 
 **This is a Python3 module for Raspberry Pi. It can work with Trema Expander i2c module and Trema Expander Hat by iarduino.ru**
