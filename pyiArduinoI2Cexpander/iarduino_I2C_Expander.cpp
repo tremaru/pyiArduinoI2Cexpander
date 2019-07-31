@@ -40,7 +40,7 @@ bool	iarduino_I2C_Expander::begin			(void){																	//	Параметр:
 bool	iarduino_I2C_Expander::changeAddress	(uint8_t newAddr){														//	Параметр:				newAddr - новый адрес модуля.
 		if(valAddr){																									//	Если расширитель был инициализирован, то ...
 //			Проверяем новый адрес:																						//
-			if(newAddr>0x7F){newAddr>>1;}																				//	Корректируем адрес, если он указан с учётом бита RW.
+			if(newAddr>0x7F){newAddr>>=1;}																				//	Корректируем адрес, если он указан с учётом бита RW.
 			if(newAddr==0x00 || newAddr==0x7F){return false;}															//	Запрещаем устанавливать адрес 0x00 и 0x7F.
 //			Записываем новый адрес:																						//
 			if(_readBytes(REG_BITS_0,1)==false){return false;}															//	Читаем 1 байт регистра «BITS_0» в массив «data».

@@ -76,11 +76,11 @@ cdef class pyiArduinoI2Cexpander:
 	def getVersion(self):
 		return self.c_expander.getVersion()
 
-	def pinMode(self, unsigned char pin, unsigned char io_dir, unsigned char io_type=DIGITAL):
-		if io_type is not DIGITAL:
+	def pinMode(self, unsigned char pin, unsigned char io_dir, unsigned char io_type=0xff):
+		if io_type is not 0xff:
 			self.c_expander.pinMode(pin, io_dir, io_type)
 		else:
-			self.c_expander.pinMode(pin, io_dir, DIGITAL)
+			self.c_expander.pinMode(pin, io_dir, 0xff)
 
 	def pinPull(self, unsigned char pin, unsigned char pull):
 		self.c_expander.pinPull(pin, pull)
@@ -115,10 +115,10 @@ cdef class pyiArduinoI2Cexpander:
 	def freqPWM(self, unsigned short frequency):
 		self.c_expander.freqPWM(frequency)
 
-	def servoAttach(self, unsigned char pin, unsigned short width_min, unsigned short width_max, unsigned short angle_min, unsigned short angle_max):
+	def servoAttach(self, unsigned char pin, unsigned short width_min, unsigned short width_max, short angle_min, short angle_max):
 		self.c_expander.servoAttach(pin, width_min, width_max, angle_min, angle_max)
 
-	def servoWrite(self, unsigned char pin, unsigned short angle):
+	def servoWrite(self, unsigned char pin, short angle):
 		self.c_expander.servoWrite(pin, angle)
 
 	def servoWriteMicroseconds(self, unsigned char pin, unsigned short width):

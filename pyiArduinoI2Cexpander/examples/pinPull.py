@@ -15,7 +15,8 @@ while True:                                                        #
   pin5 = gpio.digitalRead(5)                                       #   Читаем логический уровень с вывода №5 в переменную «pin5».
   pin6 = gpio.digitalRead(6)                                       #   Читаем логический уровень с вывода №6 в переменную «pin6».
   pin7 = gpio.digitalRead(7)                                       #   Читаем логический уровень с вывода №7 в переменную «pin7».
-  print("p5="+ str(pin5)+ ", p6=" +str(pin6) +", p7=" +str(pin7))  #
+  print("p5="+ str(pin5)+ ", p6=" +str(pin6) +", p7=" +str(pin7), end='')  
+  print("\t\t\t\t\t\t\t Нажмтие ctrl+c для выхода")                #
   sleep(.1)                                                        # * Ждём десятую долю секунды, чтоб не захламлять stdout.
                                                                    #
 #  ПРИМЕЧАНИЕ:                                                     #

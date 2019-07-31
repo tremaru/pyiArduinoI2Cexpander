@@ -5,7 +5,7 @@ from time import sleep                                             #
 gpio = pyiArduinoI2Cexpander(0x09)                                 #   Объявляем объект gpio для работы с функциями и методами библиотеки iarduino_I2C_Expander, указывая адрес модуля на шине I2C.
                                                                    #
 gpio.pinMode(3, OUTPUT, SERVO)                                     # * Конфигурируем вывод 3 на работу в качестве выхода для сервопривода.
-                                                                   #
+print("Управляем сервоприводом. Нажмите ctrl+c для выхода.")       #
 while True:                                                        # 
   gpio.servoWrite(3, 0)                                            #   Поворачиваем сервопривод в угол 0°.
   sleep(.5)                                                        #   Ждём пол секунды.
