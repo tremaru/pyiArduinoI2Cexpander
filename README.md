@@ -20,11 +20,11 @@
 
 Примеры для С++ находятся в папке `pyiArduinoI2Cexpander/cpp`. Так же в этой папке лежит *Makefile* для сборки
 из исходников. Можно собрать сразу все примеры командой:
-  `make all` или `make`
+`make all` или `make`
 Для сборки конкретного примера: `make "название примера"`
 Например:
-  `make reset`
+`make reset`
 Для удаления собранных исполняемых файлов:
-  `make clean`
+`make clean`
 
 **This is a Python3 module for Raspberry Pi. It can work with Trema Expander i2c module and Trema Expander Hat by iarduino.ru**
