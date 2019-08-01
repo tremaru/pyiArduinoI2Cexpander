@@ -1,14 +1,12 @@
 from distutils.core import setup
 from distutils.extension import Extension
-#from Cython.Build import cythonize
-#from Cython.Distutils import build_ext
 
 def readme():
 	with open('README.md') as readme:
 		return readme.read()
 
 setup(name='pyiArduinoI2Cexpander',
-	version='0.0.1',
+	version='0.9.9',
 	description='iarduino.ru module for Raspberry Pi',
 	long_description=readme(),
 	classifiers=[
