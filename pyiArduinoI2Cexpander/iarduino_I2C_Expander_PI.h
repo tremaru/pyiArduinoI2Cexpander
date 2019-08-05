@@ -57,8 +57,9 @@ class iarduino_I2C: public iarduino_I2C_BASE{										//	Определяем �
 //		Функция пакетного чтения нескольких байт данных из регистров модуля:		//
 		bool	readBytes(uint8_t addr, uint8_t reg, uint8_t *data, uint8_t sum){	//	Определяем функцию пакетного чтения нескольких байт данных из регистров модуля	(аргументы: адрес_модуля, адрес_первого_регистра, указатель_на_массив, количество_байт)
 				if (ioctl(file_i2c, I2C_SLAVE, addr) < 0) return false;				//
-				else if (write(file_i2c, &reg, 1) != 1) return false;				//
-				else if (read(file_i2c, data, sum) != sum) return false;			//
+				if (write(file_i2c, &reg, 1) != 1) return false;				//
+        usleep(100);
+				if (read(file_i2c, data, sum) != sum) return false;			//
 				else return true;													//
 		}																			//
 																					//
