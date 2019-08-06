@@ -3,7 +3,8 @@
 from pyiArduinoI2Cexpander import *                                #   Подключаем библиотеку для работы с расширителем выводов.
 from time import sleep                                             # 
 gpio = pyiArduinoI2Cexpander(0x09)                                 #   Объявляем объект gpio для работы с функциями и методами библиотеки iarduino_I2C_Expander, указывая адрес модуля на шине I2C.
-                                                                   # 
+if not gpio.begin():
+  exit()# 
 gpio.pinMode(5, INPUT, DIGITAL)                                    # * Конфигурируем вывод 5 на работу в качестве цифрового входа.
 gpio.pinMode(6, INPUT, DIGITAL)                                    # * Конфигурируем вывод 6 на работу в качестве цифрового входа.
 gpio.pinMode(7, INPUT, DIGITAL)                                    # * Конфигурируем вывод 7 на работу в качестве цифрового входа.
