@@ -3,7 +3,7 @@
 //#define newAddress 0x09                                             //   Назначаемый модулю адрес (0x07 < адрес < 0x7F).
                                                                     //
 #include <iostream>                                                 // 
-#include "iarduino_I2C_Expander.h"                                  //   Подключаем библиотеку для работы с расширителем выводов.
+#include "../iarduino_I2C_Expander.h"                                  //   Подключаем библиотеку для работы с расширителем выводов.
 iarduino_I2C_Expander gpio;                                         //   Объявляем объект gpio для работы с функциями и методами библиотеки iarduino_I2C_Expander.
                                                                     //   Если при объявлении объекта указать адрес, например, gpio(0xBB), то пример будет работать с тем модулем, адрес которого был указан.
 int main(int argc, char** argv){                                    //
