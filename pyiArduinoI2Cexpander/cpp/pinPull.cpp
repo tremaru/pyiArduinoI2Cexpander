@@ -2,7 +2,7 @@
                                                                     //
 #include <iostream>                                                 // 
 #include "../iarduino_I2C_Expander.h"                               //   Подключаем библиотеку для работы с расширителем выводов.
-iarduino_I2C_Expander gpio(0x09);                                   //   Объявляем объект gpio для работы с функциями и методами библиотеки iarduino_I2C_Expander, указывая адрес модуля на шине I2C.
+iarduino_I2C_Expander gpio(0x08);                                   //   Объявляем объект gpio для работы с функциями и методами библиотеки iarduino_I2C_Expander, указывая адрес модуля на шине I2C.
                                                                     // 
 void loop(void);                                                    // 
                                                                     //   Если объявить объект без указания адреса (iarduino_I2C_Expander gpio;), то адрес будет найден автоматически.

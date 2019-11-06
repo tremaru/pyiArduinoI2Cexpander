@@ -2,7 +2,7 @@
                                         # $ Строки со знаком $ являются необязательными.
 from pyiArduinoI2Cexpander import *     #   Подключаем библиотеку для работы с расширителем выводов.
 from time import sleep                  #
-ext = pyiArduinoI2Cexpander()           #   Объявляем объект ext для работы с функциями модуля pyiArduinoI2Cexpander, указывая адрес модуля на шине I2C.
+ext = pyiArduinoI2Cexpander(0x08)       #   Объявляем объект ext для работы с функциями модуля pyiArduinoI2Cexpander, указывая адрес модуля на шине I2C.
 if not ext.begin():                     #   Если Trema+Expander Hat не найден,
   exit()                                #   выходим из скрипта
 ext.pinMode(5, INPUT, DIGITAL)          # $ Конфигурируем вывод 5 на работу в качестве цифрового входа.

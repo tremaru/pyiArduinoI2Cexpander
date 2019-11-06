@@ -2,7 +2,7 @@
                                         # $ Строки со знаком $ являются необязательными.
 from pyiArduinoI2Cexpander import *     #   Подключаем модуль для работы с расширителем выводов.
 from time import sleep                  #   Импортируем функцию ожидания из модуля времени 
-ext = pyiArduinoI2Cexpander(0x09)       #   Объявляем объект ext для работы с функциями модуля pyiArduinoI2Cexpander, указывая адрес модуля на шине I2C.
+ext = pyiArduinoI2Cexpander(0x08)       #   Объявляем объект ext для работы с функциями модуля pyiArduinoI2Cexpander, указывая адрес модуля на шине I2C.
                                         #   Если объявить объект без указания адреса (pyiArduinoI2Cexpander()), то адрес будет найден автоматически.
 ext.pinMode(0, OUTPUT, DIGITAL)         # $ Конфигурируем вывод 0 на работу в качестве цифрового выхода.
 ext.pinMode(1, OUTPUT, DIGITAL)         # $ Конфигурируем вывод 1 на работу в качестве цифрового выхода.

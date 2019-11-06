@@ -19,7 +19,7 @@ cdef extern from "iarduino_I2C_Expander.h":
 		unsigned short analogRead(unsigned char)
 		void analogAveraging(unsigned char)
 		void levelWrite(unsigned short)
-		bint levelRead(unsigned char)
+		unsigned char levelRead(unsigned char)
 		void levelHyst(unsigned short)
 		void freqPWM(unsigned short)
 		void servoAttach(unsigned char, unsigned short, unsigned short, short, short)

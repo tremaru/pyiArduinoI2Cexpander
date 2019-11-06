@@ -2,7 +2,7 @@
                                         # $ Строки со знаком $ являются необязательными.
 from pyiArduinoI2Cexpander import *     #   Подключаем библиотеку для работы с расширителем выводов.
 from time import sleep                  # 
-ext = pyiArduinoI2Cexpander()           #   Объявляем объект ext для работы с функциями модуля pyiArduinoI2Cexpander, указывая адрес модуля на шине I2C.
+ext = pyiArduinoI2Cexpander(0x08)       #   Объявляем объект ext для работы с функциями модуля pyiArduinoI2Cexpander, указывая адрес модуля на шине I2C.
                                         #   Если объявить объект без указания адреса (ext = pyiArduinoI2Cexpander()), то адрес будет найден автоматически.
 ext.pinMode(4, INPUT, ANALOG)           # $ Конфигурируем вывод 4 на работу в качестве аналогового входа.
 ext.levelWrite(512)                     #   Устанавливаем аналоговый уровень разделяющий уровень логического 0 от 1.

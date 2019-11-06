@@ -2,7 +2,7 @@
                                         # $ Строки со знаком $ являются необязательными.
 from pyiArduinoI2Cexpander import *     #   Подключаем библиотеку для работы с расширителем выводов.
 from time import sleep
-gpio = pyiArduinoI2Cexpander(0x09)      #   Объявляем объект gpio для работы с функциями модуля pyiArduinoI2Cexpander, указывая адрес модуля на шине I2C.
+gpio = pyiArduinoI2Cexpander(0x08)      #   Объявляем объект gpio для работы с функциями модуля pyiArduinoI2Cexpander, указывая адрес модуля на шине I2C.
                                         #   Если объявить объект без указания адреса (pyiArduinoI2Cexpander()), то адрес будет найден автоматически.
 gpio.analogAveraging(255)               #   Указываем максимальный коэффициент усреднения показаний АЦП.
 gpio.pinMode(4, INPUT, ANALOG)          # $ Конфигурируем вывод 4 на работу в качестве аналогового входа.

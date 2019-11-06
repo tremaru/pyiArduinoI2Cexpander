@@ -1,6 +1,7 @@
 #ifndef iarduino_I2C_h                  // Разрешаем включить данный код в скетч, только если он не был включён ранее
 #define iarduino_I2C_h                  // Запрещаем повторное включение данного кода в скетч
 #define delay(A) usleep(A*1000)         // Определяем макрос для подмены delay() на usleep() для Raspberry (необходима подгруженная библиотека unistd.h)
+#define delayMicroseconds(A) usleep(A)
 #include <unistd.h>                     // Подключаем библиотеку unistd, для получения доступа к POSIX API
 #include <fcntl.h>                      // Подключаем библиотеку доступа к файлам
 #include <sys/ioctl.h>                  // Подключаем библиотеку контроля входов/выходов
@@ -62,15 +63,15 @@ class iarduino_I2C: public iarduino_I2C_BASE{                                   
                 }
 
 //      Функция пакетного чтения нескольких байт данных из регистров модуля:
-/*              bool readBytes(uint8_t addr, uint8_t reg, uint8_t *data, uint8_t sum)
+                bool readBytes(uint8_t addr, uint8_t reg, uint8_t *data, uint8_t sum)
                 {   // аргументы: адрес_модуля, адрес_первого_регистра, указатель_на_массив, количество_байт
                         if (ioctl(file_i2c, I2C_SLAVE, addr) < 0) return false;
-                        else if ((write(file_i2c, &reg, 1) != 1) && usleep(1000)) return false;
+                        else if ((write(file_i2c, &reg, 1) != 1)) return false;
                         else if (read(file_i2c, data, sum) != sum) return false;
                         else return true;
                 }
-*/
-                bool readBytes(uint8_t addr, uint8_t reg, uint8_t *data, uint8_t sum)
+    
+/*              bool readBytes(uint8_t addr, uint8_t reg, uint8_t *data, uint8_t sum)
                 {  // аргументы: адрес_модуля, адрес_первого_регистра, указатель_на_массив, количество_байт
                         if (ioctl(file_i2c, I2C_SLAVE, addr) < 0) return false;
                         else if ((write(file_i2c, &reg, 1) != 1)) return false;
@@ -78,7 +79,7 @@ class iarduino_I2C: public iarduino_I2C_BASE{                                   
                         if (read(file_i2c, data, sum) != sum) return false;
                         else return true;
                 }
-
+*/  
 //      Функция пакетного чтения нескольких байт данных из модуля:
                 bool readBytes(uint8_t addr, uint8_t *data, uint8_t sum)
                 {  // аргументы: адрес_модуля, указатель_на_массив, количество_байт

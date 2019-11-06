@@ -2,7 +2,7 @@
                                         # $ Строки со знаком $ являются необязательными.
 from pyiArduinoI2Cexpander import *     #   Подключаем библиотеку для работы с расширителем выводов.
 from time import sleep                  # 
-ext = pyiArduinoI2Cexpander(0x09)       #   Объявляем объект ext для работы с функциями модуля pyiArduinoI2Cexpander, указывая адрес модуля на шине I2C.
+ext = pyiArduinoI2Cexpander(0x08)       #   Объявляем объект ext для работы с функциями модуля pyiArduinoI2Cexpander, указывая адрес модуля на шине I2C.
                                         #
 ext.pinMode(3, OUTPUT, SERVO)           # $ Конфигурируем вывод 3 на работу в качестве выхода для сервопривода.
 print("Управляем сервоприводом. "

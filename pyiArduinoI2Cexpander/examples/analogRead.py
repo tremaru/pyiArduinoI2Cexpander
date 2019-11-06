@@ -3,7 +3,7 @@
                                         #
 from pyiArduinoI2Cexpander import *     #   Подключаем библиотеку для работы с расширителем выводов.
 from time import sleep                  #   Подключаем функцию sleep из модуля time 
-ext = pyiArduinoI2Cexpander(0x09)       #   Объявляем объект ext для работы с функциями
+ext = pyiArduinoI2Cexpander(0x08)       #   Объявляем объект ext для работы с функциями
                                         #    модуля pyiArduinoI2Cexpander.
 sleep(.5)                               # 
 ext.pinMode(4, INPUT, ANALOG)           # $ Конфигурируем вывод 4 на работу в качестве аналогового входа.

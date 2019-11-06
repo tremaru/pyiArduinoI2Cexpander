@@ -1,7 +1,7 @@
 # Данный пример демонстрирует версию прошивки модуля.
                                         #
 from pyiArduinoI2Cexpander import *     #   Подключаем библиотеку для работы с расширителем выводов.
-ext = pyiArduinoI2Cexpander(0x09)       #   Объявляем объект ext для работы с функциями модуля pyiArduinoI2Cexpander, указывая адрес модуля на шине I2C.
+ext = pyiArduinoI2Cexpander(0x08)       #   Объявляем объект ext для работы с функциями модуля pyiArduinoI2Cexpander, указывая адрес модуля на шине I2C.
                                         #   Если объявить объект без указания адреса (ext = pyiArduinoI2Cexpander()), то адрес будет найден автоматически.
 print("ПО модуля версии ", end='')      #   Выводим текст.
 print(str(ext.getVersion()))            #   Выводим версию прошивки модуля.

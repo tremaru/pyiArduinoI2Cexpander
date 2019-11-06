@@ -4,7 +4,7 @@
 from pyiArduinoI2Cexpander import *     # Подключаем модуль для работы с расширителем выводов.
 import sys                              # Импортируем модуль системных команд
 from time import sleep                  # Импортируем функцию ожидания из модуля времени
-ext = pyiArduinoI2Cexpander()           # Создаём объект ext для работы с функциями модуля pyiArduinoI2Cexpander, указывая адрес модуля на шине I2C.
+ext = pyiArduinoI2Cexpander()           # Создаём объект ext для работы с функциями модуля pyiArduinoI2Cexpander
                                         #
 if len(sys.argv) < 2:                   # Если скрипту не были переданы аргументы
                                         #
