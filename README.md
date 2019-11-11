@@ -1,6 +1,6 @@
 [![](https://iarduino.ru/img/logo.svg)](https://iarduino.ru)[![](https://wiki.iarduino.ru/img/git-shop.svg?3)](https://iarduino.ru) [![](https://wiki.iarduino.ru/img/git-wiki.svg?2)](https://wiki.iarduino.ru) [![](https://wiki.iarduino.ru/img/git-lesson.svg?2)](https://lesson.iarduino.ru)[![](https://wiki.iarduino.ru/img/git-forum.svg?2)](http://forum.trema.ru)
 
-# pyiArduinoI2Cexpander #
+# pyiArduinoI2Cexpander
 
 **Данная библилотека (модуль для Python3) позволяет управлять электронными модулями (устройствами) расширения выводов Expander и Trema Expander Hat от iArduino.ru по шине I2C на Raspberry Pi.**
 
