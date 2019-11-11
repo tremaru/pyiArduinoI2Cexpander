@@ -6,7 +6,7 @@ def readme():
         return readme.read()
 
 setup(name='pyiArduinoI2Cexpander',
-    version='0.9.9',
+    version='1.0.0',
     description='iarduino.ru module for Raspberry Pi',
     long_description=readme(),
     classifiers=[
