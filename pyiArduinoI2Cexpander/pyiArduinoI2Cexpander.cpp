@@ -841,15 +841,15 @@ static const char *__pyx_filename;
 
 
 static const char *__pyx_f[] = {
-  "stringsource",
   "pyiArduinoI2Cexpander.pyx",
+  "stringsource",
 };
 
 /*--- Type declarations ---*/
 struct __pyx_obj_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_pyiArduinoI2Cexpander;
 
-/* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":56
- * from iarduino_I2C_Expander cimport iarduino_I2C_Expander
+/* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":57
+ * NO_BEGIN = 1
  * 
  * cdef class pyiArduinoI2Cexpander:             # <<<<<<<<<<<<<<
  *     cdef iarduino_I2C_Expander c_expander
@@ -1010,6 +1010,12 @@ static PyObject* __Pyx_PyObject_GenericGetAttr(PyObject* obj, PyObject* attr_nam
 /* SetupReduce.proto */
 static int __Pyx_setup_reduce(PyObject* type_obj);
 
+/* Import.proto */
+static PyObject *__Pyx_Import(PyObject *name, PyObject *from_list, int level);
+
+/* ImportFrom.proto */
+static PyObject* __Pyx_ImportFrom(PyObject* module, PyObject* name);
+
 /* PyDictVersioning.proto */
 #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_TYPE_SLOTS
 #define __PYX_DICT_VERSION_INIT  ((PY_UINT64_T) -1)
@@ -1160,6 +1166,7 @@ extern int __pyx_module_is_main_pyiArduinoI2Cexpander__pyiArduinoI2Cexpander;
 int __pyx_module_is_main_pyiArduinoI2Cexpander__pyiArduinoI2Cexpander = 0;
 
 /* Implementation of 'pyiArduinoI2Cexpander.pyiArduinoI2Cexpander' */
+static PyObject *__pyx_builtin_print;
 static PyObject *__pyx_builtin_TypeError;
 static const char __pyx_k_x[] = "x";
 static const char __pyx_k_LOW[] = "LOW";
@@ -1171,13 +1178,17 @@ static const char __pyx_k_mode[] = "mode";
 static const char __pyx_k_name[] = "__name__";
 static const char __pyx_k_pull[] = "pull";
 static const char __pyx_k_test[] = "__test__";
+static const char __pyx_k_time[] = "time";
 static const char __pyx_k_INPUT[] = "INPUT";
 static const char __pyx_k_SERVO[] = "SERVO";
 static const char __pyx_k_angle[] = "angle";
 static const char __pyx_k_level[] = "level";
+static const char __pyx_k_print[] = "print";
+static const char __pyx_k_sleep[] = "sleep";
 static const char __pyx_k_width[] = "width";
 static const char __pyx_k_ANALOG[] = "ANALOG";
 static const char __pyx_k_OUTPUT[] = "OUTPUT";
+static const char __pyx_k_import[] = "__import__";
 static const char __pyx_k_in_max[] = "in_max";
 static const char __pyx_k_in_min[] = "in_min";
 static const char __pyx_k_io_dir[] = "io_dir";
@@ -1238,7 +1249,9 @@ static const char __pyx_k_REG_EXP_FREQUENCY_L[] = "REG_EXP_FREQUENCY_L";
 static const char __pyx_k_REG_EXP_HYSTERESIS_H[] = "REG_EXP_HYSTERESIS_H";
 static const char __pyx_k_REG_EXP_HYSTERESIS_L[] = "REG_EXP_HYSTERESIS_L";
 static const char __pyx_k_pyiArduinoI2Cexpander[] = "pyiArduinoI2Cexpander";
+static const char __pyx_k_I2C_raspi_config_https_wiki_iar[] = "\320\276\321\210\320\270\320\261\320\272\320\260 \320\270\320\275\320\270\321\206\320\270\320\260\320\273\320\270\320\267\320\260\321\206\320\270\320\270 \320\274\320\276\320\264\321\203\320\273\321\217.\n\320\237\321\200\320\276\320\262\320\265\321\200\321\214\321\202\320\265 \320\277\320\276\320\264\320\272\320\273\321\216\321\207\320\265\320\275\320\270\320\265 \320\270 \320\260\320\264\321\200\320\265\321\201 \320\274\320\276\320\264\321\203\320\273\321\217, \320\262\320\276\320\267\320\274\320\276\320\266\320\275\320\276 \320\275\320\265 \320\262\320\272\320\273\321\216\321\207\320\265\320\275 \320\270\320\275\321\202\320\265\321\200\321\204\320\265\320\271\321\201 I2C.\n \320\227\320\260\320\277\321\203\321\201\321\202\320\270\321\202\320\265 raspi-config \320\270 \320\262\320\272\320\273\321\216\321\207\320\270\321\202\320\265 \320\270\320\275\321\202\320\265\321\200\321\204\320\265\320\271\321\201, \320\270\320\275\321\201\321\202\321\200\321\203\320\272\321\206\320\270\321\217 \320\277\320\276 \320\262\320\272\320\273\321\216\321\207\320\265\320\275\320\270\321\216: https://wiki.iarduino.ru/page/raspberry-i2c-spi/";
 static const char __pyx_k_no_default___reduce___due_to_non[] = "no default __reduce__ due to non-trivial __cinit__";
+static const char __pyx_k_I2C_raspi_config_https_wiki_iar_2[] = "\320\276\321\210\320\270\320\261\320\272\320\260 \320\270\320\275\320\270\321\206\320\270\320\260\320\273\320\270\320\267\320\260\321\206\320\270\320\270 \320\274\320\276\320\264\321\203\320\273\321\217.\n\320\237\321\200\320\276\320\262\320\265\321\200\321\214\321\202\320\265 \320\277\320\276\320\264\320\272\320\273\321\216\321\207\320\265\320\275\320\270\320\265 \320\270 \320\260\320\264\321\200\320\265\321\201 \320\274\320\276\320\264\321\203\320\273\321\217,  \320\262\320\276\320\267\320\274\320\276\320\266\320\275\320\276 \320\275\320\265 \320\262\320\272\320\273\321\216\321\207\320\265\320\275 \320\270\320\275\321\202\320\265\321\200\321\204\320\265\320\271\321\201 I2C.\n \320\227\320\260\320\277\321\203\321\201\321\202\320\270\321\202\320\265 raspi-config \320\270 \320\262\320\272\320\273\321\216\321\207\320\270\321\202\320\265 \320\270\320\275\321\202\320\265\321\200\321\204\320\265\320\271\321\201, \320\270\320\275\321\201\321\202\321\200\321\203\320\272\321\206\320\270\321\217 \320\277\320\276 \320\262\320\272\320\273\321\216\321\207\320\265\320\275\320\270\321\216: https://wiki.iarduino.ru/page/raspberry-i2c-spi/";
 static PyObject *__pyx_n_s_ALL_PIN;
 static PyObject *__pyx_n_s_ANALOG;
 static PyObject *__pyx_n_s_DEF_CHIP_ID_FLASH;
@@ -1251,6 +1264,8 @@ static PyObject *__pyx_n_s_EXP_BIT_PUP;
 static PyObject *__pyx_n_s_EXP_BIT_SCH;
 static PyObject *__pyx_n_s_EXP_BIT_TYP;
 static PyObject *__pyx_n_s_HIGH;
+static PyObject *__pyx_kp_u_I2C_raspi_config_https_wiki_iar;
+static PyObject *__pyx_kp_u_I2C_raspi_config_https_wiki_iar_2;
 static PyObject *__pyx_n_s_INPUT;
 static PyObject *__pyx_n_s_LOW;
 static PyObject *__pyx_n_s_NO_BEGIN;
@@ -1293,6 +1308,7 @@ static PyObject *__pyx_n_s_angle_min;
 static PyObject *__pyx_n_s_auto;
 static PyObject *__pyx_n_s_cline_in_traceback;
 static PyObject *__pyx_n_s_getstate;
+static PyObject *__pyx_n_s_import;
 static PyObject *__pyx_n_s_in_max;
 static PyObject *__pyx_n_s_in_min;
 static PyObject *__pyx_n_s_io_dir;
@@ -1305,6 +1321,7 @@ static PyObject *__pyx_kp_s_no_default___reduce___due_to_non;
 static PyObject *__pyx_n_s_out_max;
 static PyObject *__pyx_n_s_out_min;
 static PyObject *__pyx_n_s_pin;
+static PyObject *__pyx_n_s_print;
 static PyObject *__pyx_n_s_pull;
 static PyObject *__pyx_n_s_pyiArduinoI2Cexpander;
 static PyObject *__pyx_n_s_reduce;
@@ -1312,7 +1329,9 @@ static PyObject *__pyx_n_s_reduce_cython;
 static PyObject *__pyx_n_s_reduce_ex;
 static PyObject *__pyx_n_s_setstate;
 static PyObject *__pyx_n_s_setstate_cython;
+static PyObject *__pyx_n_s_sleep;
 static PyObject *__pyx_n_s_test;
+static PyObject *__pyx_n_s_time;
 static PyObject *__pyx_n_s_width;
 static PyObject *__pyx_n_s_width_max;
 static PyObject *__pyx_n_s_width_min;
@@ -1375,14 +1394,16 @@ static PyObject *__pyx_int_195;
 static PyObject *__pyx_int_255;
 static PyObject *__pyx_tuple_;
 static PyObject *__pyx_tuple__2;
+static PyObject *__pyx_tuple__3;
+static PyObject *__pyx_tuple__4;
 /* Late includes */
 
-/* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":59
+/* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":60
  *     cdef iarduino_I2C_Expander c_expander
  * 
  *     def __cinit__(self, address=None, auto=None):             # <<<<<<<<<<<<<<
+ * 
  *         if address is not None:
- *             self.c_expander = iarduino_I2C_Expander(address)
  */
 
 /* Python wrapper */
@@ -1424,7 +1445,7 @@ static int __pyx_pw_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiArduino
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(1, 59, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 60, __pyx_L3_error)
       }
     } else {
       switch (PyTuple_GET_SIZE(__pyx_args)) {
@@ -1441,7 +1462,7 @@ static int __pyx_pw_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiArduino
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__cinit__", 0, 0, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(1, 59, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 0, 0, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 60, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("pyiArduinoI2Cexpander.pyiArduinoI2Cexpander.pyiArduinoI2Cexpander.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -1461,133 +1482,177 @@ static int __pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiArduino
   int __pyx_t_2;
   unsigned char __pyx_t_3;
   iarduino_I2C_Expander __pyx_t_4;
+  PyObject *__pyx_t_5 = NULL;
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":60
- * 
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":62
  *     def __cinit__(self, address=None, auto=None):
+ * 
  *         if address is not None:             # <<<<<<<<<<<<<<
+ * 
  *             self.c_expander = iarduino_I2C_Expander(address)
- *             if auto is None:
  */
   __pyx_t_1 = (__pyx_v_address != Py_None);
   __pyx_t_2 = (__pyx_t_1 != 0);
   if (__pyx_t_2) {
 
-    /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":61
- *     def __cinit__(self, address=None, auto=None):
+    /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":64
  *         if address is not None:
+ * 
  *             self.c_expander = iarduino_I2C_Expander(address)             # <<<<<<<<<<<<<<
+ * 
  *             if auto is None:
- *                 self.c_expander.begin()
  */
-    __pyx_t_3 = __Pyx_PyInt_As_unsigned_char(__pyx_v_address); if (unlikely((__pyx_t_3 == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(1, 61, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyInt_As_unsigned_char(__pyx_v_address); if (unlikely((__pyx_t_3 == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 64, __pyx_L1_error)
     try {
       __pyx_t_4 = iarduino_I2C_Expander(__pyx_t_3);
     } catch(...) {
       __Pyx_CppExn2PyErr();
-      __PYX_ERR(1, 61, __pyx_L1_error)
+      __PYX_ERR(0, 64, __pyx_L1_error)
     }
     __pyx_v_self->c_expander = __pyx_t_4;
 
-    /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":62
- *         if address is not None:
+    /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":66
  *             self.c_expander = iarduino_I2C_Expander(address)
+ * 
  *             if auto is None:             # <<<<<<<<<<<<<<
- *                 self.c_expander.begin()
- *         else:
+ *                 #sleep(.5)
+ *                 if not self.c_expander.begin():
  */
     __pyx_t_2 = (__pyx_v_auto == Py_None);
     __pyx_t_1 = (__pyx_t_2 != 0);
     if (__pyx_t_1) {
 
-      /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":63
- *             self.c_expander = iarduino_I2C_Expander(address)
+      /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":68
  *             if auto is None:
- *                 self.c_expander.begin()             # <<<<<<<<<<<<<<
- *         else:
- *             self.c_expander = iarduino_I2C_Expander()
+ *                 #sleep(.5)
+ *                 if not self.c_expander.begin():             # <<<<<<<<<<<<<<
+ * 
+ *                     print("  .\n"
  */
-      (void)(__pyx_v_self->c_expander.begin());
+      __pyx_t_1 = ((!(__pyx_v_self->c_expander.begin() != 0)) != 0);
+      if (__pyx_t_1) {
 
-      /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":62
- *         if address is not None:
+        /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":70
+ *                 if not self.c_expander.begin():
+ * 
+ *                     print("  .\n"             # <<<<<<<<<<<<<<
+ *                           "    ,"
+ *                           "     I2C.\n"
+ */
+        __pyx_t_5 = __Pyx_PyObject_Call(__pyx_builtin_print, __pyx_tuple_, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 70, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_5);
+        __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+
+        /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":68
+ *             if auto is None:
+ *                 #sleep(.5)
+ *                 if not self.c_expander.begin():             # <<<<<<<<<<<<<<
+ * 
+ *                     print("  .\n"
+ */
+      }
+
+      /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":66
  *             self.c_expander = iarduino_I2C_Expander(address)
+ * 
  *             if auto is None:             # <<<<<<<<<<<<<<
- *                 self.c_expander.begin()
- *         else:
+ *                 #sleep(.5)
+ *                 if not self.c_expander.begin():
  */
     }
 
-    /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":60
- * 
+    /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":62
  *     def __cinit__(self, address=None, auto=None):
+ * 
  *         if address is not None:             # <<<<<<<<<<<<<<
+ * 
  *             self.c_expander = iarduino_I2C_Expander(address)
- *             if auto is None:
  */
     goto __pyx_L3;
   }
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":65
- *                 self.c_expander.begin()
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":79
  *         else:
+ * 
  *             self.c_expander = iarduino_I2C_Expander()             # <<<<<<<<<<<<<<
+ * 
  *             if auto is None:
- *                 self.c_expander.begin()
  */
   /*else*/ {
     try {
       __pyx_t_4 = iarduino_I2C_Expander();
     } catch(...) {
       __Pyx_CppExn2PyErr();
-      __PYX_ERR(1, 65, __pyx_L1_error)
+      __PYX_ERR(0, 79, __pyx_L1_error)
     }
     __pyx_v_self->c_expander = __pyx_t_4;
 
-    /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":66
- *         else:
+    /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":81
  *             self.c_expander = iarduino_I2C_Expander()
- *             if auto is None:             # <<<<<<<<<<<<<<
- *                 self.c_expander.begin()
  * 
+ *             if auto is None:             # <<<<<<<<<<<<<<
+ *                 #sleep(.5)
+ *                 if not self.c_expander.begin():
  */
     __pyx_t_1 = (__pyx_v_auto == Py_None);
     __pyx_t_2 = (__pyx_t_1 != 0);
     if (__pyx_t_2) {
 
-      /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":67
- *             self.c_expander = iarduino_I2C_Expander()
+      /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":83
  *             if auto is None:
- *                 self.c_expander.begin()             # <<<<<<<<<<<<<<
+ *                 #sleep(.5)
+ *                 if not self.c_expander.begin():             # <<<<<<<<<<<<<<
  * 
- *     def begin(self):
+ *                     print("  .\n"
  */
-      (void)(__pyx_v_self->c_expander.begin());
+      __pyx_t_2 = ((!(__pyx_v_self->c_expander.begin() != 0)) != 0);
+      if (__pyx_t_2) {
 
-      /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":66
- *         else:
- *             self.c_expander = iarduino_I2C_Expander()
- *             if auto is None:             # <<<<<<<<<<<<<<
- *                 self.c_expander.begin()
+        /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":85
+ *                 if not self.c_expander.begin():
  * 
+ *                     print("  .\n"             # <<<<<<<<<<<<<<
+ *                           "    , "
+ *                           "     I2C.\n"
+ */
+        __pyx_t_5 = __Pyx_PyObject_Call(__pyx_builtin_print, __pyx_tuple__2, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 85, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_5);
+        __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+
+        /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":83
+ *             if auto is None:
+ *                 #sleep(.5)
+ *                 if not self.c_expander.begin():             # <<<<<<<<<<<<<<
+ * 
+ *                     print("  .\n"
+ */
+      }
+
+      /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":81
+ *             self.c_expander = iarduino_I2C_Expander()
+ * 
+ *             if auto is None:             # <<<<<<<<<<<<<<
+ *                 #sleep(.5)
+ *                 if not self.c_expander.begin():
  */
     }
   }
   __pyx_L3:;
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":59
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":60
  *     cdef iarduino_I2C_Expander c_expander
  * 
  *     def __cinit__(self, address=None, auto=None):             # <<<<<<<<<<<<<<
+ * 
  *         if address is not None:
- *             self.c_expander = iarduino_I2C_Expander(address)
  */
 
   /* function exit code */
   __pyx_r = 0;
   goto __pyx_L0;
   __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_5);
   __Pyx_AddTraceback("pyiArduinoI2Cexpander.pyiArduinoI2Cexpander.pyiArduinoI2Cexpander.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   __pyx_L0:;
@@ -1595,8 +1660,8 @@ static int __pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiArduino
   return __pyx_r;
 }
 
-/* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":69
- *                 self.c_expander.begin()
+/* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":92
+ *                           " https://wiki.iarduino.ru/page/raspberry-i2c-spi/")
  * 
  *     def begin(self):             # <<<<<<<<<<<<<<
  *         return self.c_expander.begin()
@@ -1622,7 +1687,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("begin", 0);
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":70
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":93
  * 
  *     def begin(self):
  *         return self.c_expander.begin()             # <<<<<<<<<<<<<<
@@ -1630,14 +1695,14 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
  *     def changeAddress(self, unsigned char newAddr):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyBool_FromLong(__pyx_v_self->c_expander.begin()); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 70, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyBool_FromLong(__pyx_v_self->c_expander.begin()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 93, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":69
- *                 self.c_expander.begin()
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":92
+ *                           " https://wiki.iarduino.ru/page/raspberry-i2c-spi/")
  * 
  *     def begin(self):             # <<<<<<<<<<<<<<
  *         return self.c_expander.begin()
@@ -1655,7 +1720,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
   return __pyx_r;
 }
 
-/* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":72
+/* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":95
  *         return self.c_expander.begin()
  * 
  *     def changeAddress(self, unsigned char newAddr):             # <<<<<<<<<<<<<<
@@ -1671,7 +1736,7 @@ static PyObject *__pyx_pw_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("changeAddress (wrapper)", 0);
   assert(__pyx_arg_newAddr); {
-    __pyx_v_newAddr = __Pyx_PyInt_As_unsigned_char(__pyx_arg_newAddr); if (unlikely((__pyx_v_newAddr == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(1, 72, __pyx_L3_error)
+    __pyx_v_newAddr = __Pyx_PyInt_As_unsigned_char(__pyx_arg_newAddr); if (unlikely((__pyx_v_newAddr == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 95, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -1692,7 +1757,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("changeAddress", 0);
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":73
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":96
  * 
  *     def changeAddress(self, unsigned char newAddr):
  *         return self.c_expander.changeAddress(newAddr)             # <<<<<<<<<<<<<<
@@ -1700,13 +1765,13 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
  *     def reset(self):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyBool_FromLong(__pyx_v_self->c_expander.changeAddress(__pyx_v_newAddr)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 73, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyBool_FromLong(__pyx_v_self->c_expander.changeAddress(__pyx_v_newAddr)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 96, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":72
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":95
  *         return self.c_expander.begin()
  * 
  *     def changeAddress(self, unsigned char newAddr):             # <<<<<<<<<<<<<<
@@ -1725,7 +1790,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
   return __pyx_r;
 }
 
-/* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":75
+/* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":98
  *         return self.c_expander.changeAddress(newAddr)
  * 
  *     def reset(self):             # <<<<<<<<<<<<<<
@@ -1752,7 +1817,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("reset", 0);
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":76
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":99
  * 
  *     def reset(self):
  *         return self.c_expander.reset()             # <<<<<<<<<<<<<<
@@ -1760,13 +1825,13 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
  *     def getAddress(self):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyBool_FromLong(__pyx_v_self->c_expander.reset()); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 76, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyBool_FromLong(__pyx_v_self->c_expander.reset()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 99, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":75
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":98
  *         return self.c_expander.changeAddress(newAddr)
  * 
  *     def reset(self):             # <<<<<<<<<<<<<<
@@ -1785,7 +1850,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
   return __pyx_r;
 }
 
-/* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":78
+/* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":101
  *         return self.c_expander.reset()
  * 
  *     def getAddress(self):             # <<<<<<<<<<<<<<
@@ -1812,7 +1877,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("getAddress", 0);
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":79
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":102
  * 
  *     def getAddress(self):
  *         return self.c_expander.getAddress()             # <<<<<<<<<<<<<<
@@ -1820,13 +1885,13 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
  *     def getVersion(self):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_unsigned_char(__pyx_v_self->c_expander.getAddress()); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 79, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_unsigned_char(__pyx_v_self->c_expander.getAddress()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 102, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":78
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":101
  *         return self.c_expander.reset()
  * 
  *     def getAddress(self):             # <<<<<<<<<<<<<<
@@ -1845,7 +1910,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
   return __pyx_r;
 }
 
-/* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":81
+/* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":104
  *         return self.c_expander.getAddress()
  * 
  *     def getVersion(self):             # <<<<<<<<<<<<<<
@@ -1872,7 +1937,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("getVersion", 0);
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":82
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":105
  * 
  *     def getVersion(self):
  *         return self.c_expander.getVersion()             # <<<<<<<<<<<<<<
@@ -1880,13 +1945,13 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
  *     def pinMode(self, unsigned char pin, unsigned char io_dir, unsigned char io_type=0xff):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_unsigned_char(__pyx_v_self->c_expander.getVersion()); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 82, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_unsigned_char(__pyx_v_self->c_expander.getVersion()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 105, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":81
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":104
  *         return self.c_expander.getAddress()
  * 
  *     def getVersion(self):             # <<<<<<<<<<<<<<
@@ -1905,7 +1970,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
   return __pyx_r;
 }
 
-/* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":84
+/* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":107
  *         return self.c_expander.getVersion()
  * 
  *     def pinMode(self, unsigned char pin, unsigned char io_dir, unsigned char io_type=0xff):             # <<<<<<<<<<<<<<
@@ -1947,7 +2012,7 @@ static PyObject *__pyx_pw_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_io_dir)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("pinMode", 0, 2, 3, 1); __PYX_ERR(1, 84, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("pinMode", 0, 2, 3, 1); __PYX_ERR(0, 107, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
@@ -1957,7 +2022,7 @@ static PyObject *__pyx_pw_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "pinMode") < 0)) __PYX_ERR(1, 84, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "pinMode") < 0)) __PYX_ERR(0, 107, __pyx_L3_error)
       }
     } else {
       switch (PyTuple_GET_SIZE(__pyx_args)) {
@@ -1969,17 +2034,17 @@ static PyObject *__pyx_pw_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
         default: goto __pyx_L5_argtuple_error;
       }
     }
-    __pyx_v_pin = __Pyx_PyInt_As_unsigned_char(values[0]); if (unlikely((__pyx_v_pin == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(1, 84, __pyx_L3_error)
-    __pyx_v_io_dir = __Pyx_PyInt_As_unsigned_char(values[1]); if (unlikely((__pyx_v_io_dir == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(1, 84, __pyx_L3_error)
+    __pyx_v_pin = __Pyx_PyInt_As_unsigned_char(values[0]); if (unlikely((__pyx_v_pin == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 107, __pyx_L3_error)
+    __pyx_v_io_dir = __Pyx_PyInt_As_unsigned_char(values[1]); if (unlikely((__pyx_v_io_dir == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 107, __pyx_L3_error)
     if (values[2]) {
-      __pyx_v_io_type = __Pyx_PyInt_As_unsigned_char(values[2]); if (unlikely((__pyx_v_io_type == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(1, 84, __pyx_L3_error)
+      __pyx_v_io_type = __Pyx_PyInt_As_unsigned_char(values[2]); if (unlikely((__pyx_v_io_type == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 107, __pyx_L3_error)
     } else {
       __pyx_v_io_type = ((unsigned char)0xff);
     }
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("pinMode", 0, 2, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(1, 84, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("pinMode", 0, 2, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 107, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("pyiArduinoI2Cexpander.pyiArduinoI2Cexpander.pyiArduinoI2Cexpander.pinMode", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -1998,7 +2063,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
   int __pyx_t_1;
   __Pyx_RefNannySetupContext("pinMode", 0);
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":85
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":108
  * 
  *     def pinMode(self, unsigned char pin, unsigned char io_dir, unsigned char io_type=0xff):
  *         if io_type is not 0xff:             # <<<<<<<<<<<<<<
@@ -2008,7 +2073,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
   __pyx_t_1 = ((__pyx_v_io_type != 0xff) != 0);
   if (__pyx_t_1) {
 
-    /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":86
+    /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":109
  *     def pinMode(self, unsigned char pin, unsigned char io_dir, unsigned char io_type=0xff):
  *         if io_type is not 0xff:
  *             self.c_expander.pinMode(pin, io_dir, io_type)             # <<<<<<<<<<<<<<
@@ -2017,7 +2082,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
  */
     __pyx_v_self->c_expander.pinMode(__pyx_v_pin, __pyx_v_io_dir, __pyx_v_io_type);
 
-    /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":85
+    /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":108
  * 
  *     def pinMode(self, unsigned char pin, unsigned char io_dir, unsigned char io_type=0xff):
  *         if io_type is not 0xff:             # <<<<<<<<<<<<<<
@@ -2027,7 +2092,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
     goto __pyx_L3;
   }
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":88
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":111
  *             self.c_expander.pinMode(pin, io_dir, io_type)
  *         else:
  *             self.c_expander.pinMode(pin, io_dir, 0xff)             # <<<<<<<<<<<<<<
@@ -2039,7 +2104,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
   }
   __pyx_L3:;
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":84
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":107
  *         return self.c_expander.getVersion()
  * 
  *     def pinMode(self, unsigned char pin, unsigned char io_dir, unsigned char io_type=0xff):             # <<<<<<<<<<<<<<
@@ -2054,7 +2119,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
   return __pyx_r;
 }
 
-/* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":90
+/* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":113
  *             self.c_expander.pinMode(pin, io_dir, 0xff)
  * 
  *     def pinPull(self, unsigned char pin, unsigned char pull):             # <<<<<<<<<<<<<<
@@ -2093,11 +2158,11 @@ static PyObject *__pyx_pw_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_pull)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("pinPull", 1, 2, 2, 1); __PYX_ERR(1, 90, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("pinPull", 1, 2, 2, 1); __PYX_ERR(0, 113, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "pinPull") < 0)) __PYX_ERR(1, 90, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "pinPull") < 0)) __PYX_ERR(0, 113, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -2105,12 +2170,12 @@ static PyObject *__pyx_pw_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_pin = __Pyx_PyInt_As_unsigned_char(values[0]); if (unlikely((__pyx_v_pin == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(1, 90, __pyx_L3_error)
-    __pyx_v_pull = __Pyx_PyInt_As_unsigned_char(values[1]); if (unlikely((__pyx_v_pull == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(1, 90, __pyx_L3_error)
+    __pyx_v_pin = __Pyx_PyInt_As_unsigned_char(values[0]); if (unlikely((__pyx_v_pin == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 113, __pyx_L3_error)
+    __pyx_v_pull = __Pyx_PyInt_As_unsigned_char(values[1]); if (unlikely((__pyx_v_pull == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 113, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("pinPull", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(1, 90, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("pinPull", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 113, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("pyiArduinoI2Cexpander.pyiArduinoI2Cexpander.pyiArduinoI2Cexpander.pinPull", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -2128,7 +2193,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("pinPull", 0);
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":91
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":114
  * 
  *     def pinPull(self, unsigned char pin, unsigned char pull):
  *         self.c_expander.pinPull(pin, pull)             # <<<<<<<<<<<<<<
@@ -2137,7 +2202,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
  */
   __pyx_v_self->c_expander.pinPull(__pyx_v_pin, __pyx_v_pull);
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":90
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":113
  *             self.c_expander.pinMode(pin, io_dir, 0xff)
  * 
  *     def pinPull(self, unsigned char pin, unsigned char pull):             # <<<<<<<<<<<<<<
@@ -2152,7 +2217,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
   return __pyx_r;
 }
 
-/* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":93
+/* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":116
  *         self.c_expander.pinPull(pin, pull)
  * 
  *     def pinOutScheme(self, unsigned char pin, unsigned char mode):             # <<<<<<<<<<<<<<
@@ -2191,11 +2256,11 @@ static PyObject *__pyx_pw_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_mode)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("pinOutScheme", 1, 2, 2, 1); __PYX_ERR(1, 93, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("pinOutScheme", 1, 2, 2, 1); __PYX_ERR(0, 116, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "pinOutScheme") < 0)) __PYX_ERR(1, 93, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "pinOutScheme") < 0)) __PYX_ERR(0, 116, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -2203,12 +2268,12 @@ static PyObject *__pyx_pw_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_pin = __Pyx_PyInt_As_unsigned_char(values[0]); if (unlikely((__pyx_v_pin == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(1, 93, __pyx_L3_error)
-    __pyx_v_mode = __Pyx_PyInt_As_unsigned_char(values[1]); if (unlikely((__pyx_v_mode == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(1, 93, __pyx_L3_error)
+    __pyx_v_pin = __Pyx_PyInt_As_unsigned_char(values[0]); if (unlikely((__pyx_v_pin == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 116, __pyx_L3_error)
+    __pyx_v_mode = __Pyx_PyInt_As_unsigned_char(values[1]); if (unlikely((__pyx_v_mode == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 116, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("pinOutScheme", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(1, 93, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("pinOutScheme", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 116, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("pyiArduinoI2Cexpander.pyiArduinoI2Cexpander.pyiArduinoI2Cexpander.pinOutScheme", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -2226,7 +2291,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("pinOutScheme", 0);
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":94
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":117
  * 
  *     def pinOutScheme(self, unsigned char pin, unsigned char mode):
  *         self.c_expander.pinOutScheme(pin, mode)             # <<<<<<<<<<<<<<
@@ -2235,7 +2300,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
  */
   __pyx_v_self->c_expander.pinOutScheme(__pyx_v_pin, __pyx_v_mode);
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":93
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":116
  *         self.c_expander.pinPull(pin, pull)
  * 
  *     def pinOutScheme(self, unsigned char pin, unsigned char mode):             # <<<<<<<<<<<<<<
@@ -2250,7 +2315,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
   return __pyx_r;
 }
 
-/* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":96
+/* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":119
  *         self.c_expander.pinOutScheme(pin, mode)
  * 
  *     def digitalWrite(self, unsigned char pin, unsigned char level):             # <<<<<<<<<<<<<<
@@ -2289,11 +2354,11 @@ static PyObject *__pyx_pw_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_level)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("digitalWrite", 1, 2, 2, 1); __PYX_ERR(1, 96, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("digitalWrite", 1, 2, 2, 1); __PYX_ERR(0, 119, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "digitalWrite") < 0)) __PYX_ERR(1, 96, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "digitalWrite") < 0)) __PYX_ERR(0, 119, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -2301,12 +2366,12 @@ static PyObject *__pyx_pw_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_pin = __Pyx_PyInt_As_unsigned_char(values[0]); if (unlikely((__pyx_v_pin == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(1, 96, __pyx_L3_error)
-    __pyx_v_level = __Pyx_PyInt_As_unsigned_char(values[1]); if (unlikely((__pyx_v_level == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(1, 96, __pyx_L3_error)
+    __pyx_v_pin = __Pyx_PyInt_As_unsigned_char(values[0]); if (unlikely((__pyx_v_pin == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 119, __pyx_L3_error)
+    __pyx_v_level = __Pyx_PyInt_As_unsigned_char(values[1]); if (unlikely((__pyx_v_level == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 119, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("digitalWrite", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(1, 96, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("digitalWrite", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 119, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("pyiArduinoI2Cexpander.pyiArduinoI2Cexpander.pyiArduinoI2Cexpander.digitalWrite", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -2324,7 +2389,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("digitalWrite", 0);
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":97
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":120
  * 
  *     def digitalWrite(self, unsigned char pin, unsigned char level):
  *         self.c_expander.digitalWrite(pin, level)             # <<<<<<<<<<<<<<
@@ -2333,7 +2398,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
  */
   __pyx_v_self->c_expander.digitalWrite(__pyx_v_pin, __pyx_v_level);
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":96
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":119
  *         self.c_expander.pinOutScheme(pin, mode)
  * 
  *     def digitalWrite(self, unsigned char pin, unsigned char level):             # <<<<<<<<<<<<<<
@@ -2348,7 +2413,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
   return __pyx_r;
 }
 
-/* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":99
+/* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":122
  *         self.c_expander.digitalWrite(pin, level)
  * 
  *     def digitalRead(self, unsigned char pin):             # <<<<<<<<<<<<<<
@@ -2364,7 +2429,7 @@ static PyObject *__pyx_pw_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("digitalRead (wrapper)", 0);
   assert(__pyx_arg_pin); {
-    __pyx_v_pin = __Pyx_PyInt_As_unsigned_char(__pyx_arg_pin); if (unlikely((__pyx_v_pin == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(1, 99, __pyx_L3_error)
+    __pyx_v_pin = __Pyx_PyInt_As_unsigned_char(__pyx_arg_pin); if (unlikely((__pyx_v_pin == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 122, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -2385,7 +2450,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("digitalRead", 0);
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":100
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":123
  * 
  *     def digitalRead(self, unsigned char pin):
  *         return self.c_expander.digitalRead(pin)             # <<<<<<<<<<<<<<
@@ -2393,13 +2458,13 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
  *     def analogWrite(self, unsigned char pin, unsigned short level):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_unsigned_char(__pyx_v_self->c_expander.digitalRead(__pyx_v_pin)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 100, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_unsigned_char(__pyx_v_self->c_expander.digitalRead(__pyx_v_pin)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 123, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":99
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":122
  *         self.c_expander.digitalWrite(pin, level)
  * 
  *     def digitalRead(self, unsigned char pin):             # <<<<<<<<<<<<<<
@@ -2418,7 +2483,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
   return __pyx_r;
 }
 
-/* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":102
+/* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":125
  *         return self.c_expander.digitalRead(pin)
  * 
  *     def analogWrite(self, unsigned char pin, unsigned short level):             # <<<<<<<<<<<<<<
@@ -2457,11 +2522,11 @@ static PyObject *__pyx_pw_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_level)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("analogWrite", 1, 2, 2, 1); __PYX_ERR(1, 102, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("analogWrite", 1, 2, 2, 1); __PYX_ERR(0, 125, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "analogWrite") < 0)) __PYX_ERR(1, 102, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "analogWrite") < 0)) __PYX_ERR(0, 125, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -2469,12 +2534,12 @@ static PyObject *__pyx_pw_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_pin = __Pyx_PyInt_As_unsigned_char(values[0]); if (unlikely((__pyx_v_pin == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(1, 102, __pyx_L3_error)
-    __pyx_v_level = __Pyx_PyInt_As_unsigned_short(values[1]); if (unlikely((__pyx_v_level == (unsigned short)-1) && PyErr_Occurred())) __PYX_ERR(1, 102, __pyx_L3_error)
+    __pyx_v_pin = __Pyx_PyInt_As_unsigned_char(values[0]); if (unlikely((__pyx_v_pin == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 125, __pyx_L3_error)
+    __pyx_v_level = __Pyx_PyInt_As_unsigned_short(values[1]); if (unlikely((__pyx_v_level == (unsigned short)-1) && PyErr_Occurred())) __PYX_ERR(0, 125, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("analogWrite", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(1, 102, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("analogWrite", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 125, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("pyiArduinoI2Cexpander.pyiArduinoI2Cexpander.pyiArduinoI2Cexpander.analogWrite", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -2492,7 +2557,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("analogWrite", 0);
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":103
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":126
  * 
  *     def analogWrite(self, unsigned char pin, unsigned short level):
  *         self.c_expander.analogWrite(pin, level)             # <<<<<<<<<<<<<<
@@ -2501,7 +2566,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
  */
   __pyx_v_self->c_expander.analogWrite(__pyx_v_pin, __pyx_v_level);
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":102
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":125
  *         return self.c_expander.digitalRead(pin)
  * 
  *     def analogWrite(self, unsigned char pin, unsigned short level):             # <<<<<<<<<<<<<<
@@ -2516,7 +2581,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
   return __pyx_r;
 }
 
-/* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":105
+/* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":128
  *         self.c_expander.analogWrite(pin, level)
  * 
  *     def analogRead(self, unsigned char pin):             # <<<<<<<<<<<<<<
@@ -2532,7 +2597,7 @@ static PyObject *__pyx_pw_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("analogRead (wrapper)", 0);
   assert(__pyx_arg_pin); {
-    __pyx_v_pin = __Pyx_PyInt_As_unsigned_char(__pyx_arg_pin); if (unlikely((__pyx_v_pin == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(1, 105, __pyx_L3_error)
+    __pyx_v_pin = __Pyx_PyInt_As_unsigned_char(__pyx_arg_pin); if (unlikely((__pyx_v_pin == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 128, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -2553,7 +2618,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("analogRead", 0);
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":106
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":129
  * 
  *     def analogRead(self, unsigned char pin):
  *         return self.c_expander.analogRead(pin)             # <<<<<<<<<<<<<<
@@ -2561,13 +2626,13 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
  *     def analogAveraging(self, unsigned char coefficient):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_unsigned_short(__pyx_v_self->c_expander.analogRead(__pyx_v_pin)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 106, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_unsigned_short(__pyx_v_self->c_expander.analogRead(__pyx_v_pin)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 129, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":105
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":128
  *         self.c_expander.analogWrite(pin, level)
  * 
  *     def analogRead(self, unsigned char pin):             # <<<<<<<<<<<<<<
@@ -2586,7 +2651,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
   return __pyx_r;
 }
 
-/* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":108
+/* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":131
  *         return self.c_expander.analogRead(pin)
  * 
  *     def analogAveraging(self, unsigned char coefficient):             # <<<<<<<<<<<<<<
@@ -2602,7 +2667,7 @@ static PyObject *__pyx_pw_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("analogAveraging (wrapper)", 0);
   assert(__pyx_arg_coefficient); {
-    __pyx_v_coefficient = __Pyx_PyInt_As_unsigned_char(__pyx_arg_coefficient); if (unlikely((__pyx_v_coefficient == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(1, 108, __pyx_L3_error)
+    __pyx_v_coefficient = __Pyx_PyInt_As_unsigned_char(__pyx_arg_coefficient); if (unlikely((__pyx_v_coefficient == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 131, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -2622,7 +2687,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("analogAveraging", 0);
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":109
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":132
  * 
  *     def analogAveraging(self, unsigned char coefficient):
  *         self.c_expander.analogAveraging(coefficient)             # <<<<<<<<<<<<<<
@@ -2631,7 +2696,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
  */
   __pyx_v_self->c_expander.analogAveraging(__pyx_v_coefficient);
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":108
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":131
  *         return self.c_expander.analogRead(pin)
  * 
  *     def analogAveraging(self, unsigned char coefficient):             # <<<<<<<<<<<<<<
@@ -2646,7 +2711,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
   return __pyx_r;
 }
 
-/* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":111
+/* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":134
  *         self.c_expander.analogAveraging(coefficient)
  * 
  *     def levelWrite(self, unsigned short level):             # <<<<<<<<<<<<<<
@@ -2662,7 +2727,7 @@ static PyObject *__pyx_pw_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("levelWrite (wrapper)", 0);
   assert(__pyx_arg_level); {
-    __pyx_v_level = __Pyx_PyInt_As_unsigned_short(__pyx_arg_level); if (unlikely((__pyx_v_level == (unsigned short)-1) && PyErr_Occurred())) __PYX_ERR(1, 111, __pyx_L3_error)
+    __pyx_v_level = __Pyx_PyInt_As_unsigned_short(__pyx_arg_level); if (unlikely((__pyx_v_level == (unsigned short)-1) && PyErr_Occurred())) __PYX_ERR(0, 134, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -2682,7 +2747,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("levelWrite", 0);
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":112
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":135
  * 
  *     def levelWrite(self, unsigned short level):
  *         self.c_expander.levelWrite(level)             # <<<<<<<<<<<<<<
@@ -2691,7 +2756,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
  */
   __pyx_v_self->c_expander.levelWrite(__pyx_v_level);
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":111
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":134
  *         self.c_expander.analogAveraging(coefficient)
  * 
  *     def levelWrite(self, unsigned short level):             # <<<<<<<<<<<<<<
@@ -2706,7 +2771,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
   return __pyx_r;
 }
 
-/* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":114
+/* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":137
  *         self.c_expander.levelWrite(level)
  * 
  *     def levelRead(self, unsigned char pin):             # <<<<<<<<<<<<<<
@@ -2722,7 +2787,7 @@ static PyObject *__pyx_pw_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("levelRead (wrapper)", 0);
   assert(__pyx_arg_pin); {
-    __pyx_v_pin = __Pyx_PyInt_As_unsigned_char(__pyx_arg_pin); if (unlikely((__pyx_v_pin == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(1, 114, __pyx_L3_error)
+    __pyx_v_pin = __Pyx_PyInt_As_unsigned_char(__pyx_arg_pin); if (unlikely((__pyx_v_pin == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 137, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -2743,7 +2808,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("levelRead", 0);
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":115
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":138
  * 
  *     def levelRead(self, unsigned char pin):
  *         return self.c_expander.levelRead(pin)             # <<<<<<<<<<<<<<
@@ -2751,13 +2816,13 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
  *     def levelHyst(self, unsigned short hysteresis):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_unsigned_char(__pyx_v_self->c_expander.levelRead(__pyx_v_pin)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 115, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_unsigned_char(__pyx_v_self->c_expander.levelRead(__pyx_v_pin)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 138, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":114
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":137
  *         self.c_expander.levelWrite(level)
  * 
  *     def levelRead(self, unsigned char pin):             # <<<<<<<<<<<<<<
@@ -2776,7 +2841,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
   return __pyx_r;
 }
 
-/* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":117
+/* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":140
  *         return self.c_expander.levelRead(pin)
  * 
  *     def levelHyst(self, unsigned short hysteresis):             # <<<<<<<<<<<<<<
@@ -2792,7 +2857,7 @@ static PyObject *__pyx_pw_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("levelHyst (wrapper)", 0);
   assert(__pyx_arg_hysteresis); {
-    __pyx_v_hysteresis = __Pyx_PyInt_As_unsigned_short(__pyx_arg_hysteresis); if (unlikely((__pyx_v_hysteresis == (unsigned short)-1) && PyErr_Occurred())) __PYX_ERR(1, 117, __pyx_L3_error)
+    __pyx_v_hysteresis = __Pyx_PyInt_As_unsigned_short(__pyx_arg_hysteresis); if (unlikely((__pyx_v_hysteresis == (unsigned short)-1) && PyErr_Occurred())) __PYX_ERR(0, 140, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -2812,7 +2877,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("levelHyst", 0);
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":118
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":141
  * 
  *     def levelHyst(self, unsigned short hysteresis):
  *         self.c_expander.levelHyst(hysteresis)             # <<<<<<<<<<<<<<
@@ -2821,7 +2886,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
  */
   __pyx_v_self->c_expander.levelHyst(__pyx_v_hysteresis);
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":117
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":140
  *         return self.c_expander.levelRead(pin)
  * 
  *     def levelHyst(self, unsigned short hysteresis):             # <<<<<<<<<<<<<<
@@ -2836,7 +2901,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
   return __pyx_r;
 }
 
-/* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":120
+/* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":143
  *         self.c_expander.levelHyst(hysteresis)
  * 
  *     def freqPWM(self, unsigned short frequency):             # <<<<<<<<<<<<<<
@@ -2852,7 +2917,7 @@ static PyObject *__pyx_pw_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("freqPWM (wrapper)", 0);
   assert(__pyx_arg_frequency); {
-    __pyx_v_frequency = __Pyx_PyInt_As_unsigned_short(__pyx_arg_frequency); if (unlikely((__pyx_v_frequency == (unsigned short)-1) && PyErr_Occurred())) __PYX_ERR(1, 120, __pyx_L3_error)
+    __pyx_v_frequency = __Pyx_PyInt_As_unsigned_short(__pyx_arg_frequency); if (unlikely((__pyx_v_frequency == (unsigned short)-1) && PyErr_Occurred())) __PYX_ERR(0, 143, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -2872,7 +2937,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("freqPWM", 0);
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":121
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":144
  * 
  *     def freqPWM(self, unsigned short frequency):
  *         self.c_expander.freqPWM(frequency)             # <<<<<<<<<<<<<<
@@ -2881,7 +2946,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
  */
   __pyx_v_self->c_expander.freqPWM(__pyx_v_frequency);
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":120
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":143
  *         self.c_expander.levelHyst(hysteresis)
  * 
  *     def freqPWM(self, unsigned short frequency):             # <<<<<<<<<<<<<<
@@ -2896,7 +2961,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
   return __pyx_r;
 }
 
-/* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":123
+/* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":146
  *         self.c_expander.freqPWM(frequency)
  * 
  *     def servoAttach(self, unsigned char pin, unsigned short width_min, unsigned short width_max, short angle_min, short angle_max):             # <<<<<<<<<<<<<<
@@ -2944,29 +3009,29 @@ static PyObject *__pyx_pw_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_width_min)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("servoAttach", 1, 5, 5, 1); __PYX_ERR(1, 123, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("servoAttach", 1, 5, 5, 1); __PYX_ERR(0, 146, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_width_max)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("servoAttach", 1, 5, 5, 2); __PYX_ERR(1, 123, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("servoAttach", 1, 5, 5, 2); __PYX_ERR(0, 146, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  3:
         if (likely((values[3] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_angle_min)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("servoAttach", 1, 5, 5, 3); __PYX_ERR(1, 123, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("servoAttach", 1, 5, 5, 3); __PYX_ERR(0, 146, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  4:
         if (likely((values[4] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_angle_max)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("servoAttach", 1, 5, 5, 4); __PYX_ERR(1, 123, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("servoAttach", 1, 5, 5, 4); __PYX_ERR(0, 146, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "servoAttach") < 0)) __PYX_ERR(1, 123, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "servoAttach") < 0)) __PYX_ERR(0, 146, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 5) {
       goto __pyx_L5_argtuple_error;
@@ -2977,15 +3042,15 @@ static PyObject *__pyx_pw_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
       values[3] = PyTuple_GET_ITEM(__pyx_args, 3);
       values[4] = PyTuple_GET_ITEM(__pyx_args, 4);
     }
-    __pyx_v_pin = __Pyx_PyInt_As_unsigned_char(values[0]); if (unlikely((__pyx_v_pin == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(1, 123, __pyx_L3_error)
-    __pyx_v_width_min = __Pyx_PyInt_As_unsigned_short(values[1]); if (unlikely((__pyx_v_width_min == (unsigned short)-1) && PyErr_Occurred())) __PYX_ERR(1, 123, __pyx_L3_error)
-    __pyx_v_width_max = __Pyx_PyInt_As_unsigned_short(values[2]); if (unlikely((__pyx_v_width_max == (unsigned short)-1) && PyErr_Occurred())) __PYX_ERR(1, 123, __pyx_L3_error)
-    __pyx_v_angle_min = __Pyx_PyInt_As_short(values[3]); if (unlikely((__pyx_v_angle_min == (short)-1) && PyErr_Occurred())) __PYX_ERR(1, 123, __pyx_L3_error)
-    __pyx_v_angle_max = __Pyx_PyInt_As_short(values[4]); if (unlikely((__pyx_v_angle_max == (short)-1) && PyErr_Occurred())) __PYX_ERR(1, 123, __pyx_L3_error)
+    __pyx_v_pin = __Pyx_PyInt_As_unsigned_char(values[0]); if (unlikely((__pyx_v_pin == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 146, __pyx_L3_error)
+    __pyx_v_width_min = __Pyx_PyInt_As_unsigned_short(values[1]); if (unlikely((__pyx_v_width_min == (unsigned short)-1) && PyErr_Occurred())) __PYX_ERR(0, 146, __pyx_L3_error)
+    __pyx_v_width_max = __Pyx_PyInt_As_unsigned_short(values[2]); if (unlikely((__pyx_v_width_max == (unsigned short)-1) && PyErr_Occurred())) __PYX_ERR(0, 146, __pyx_L3_error)
+    __pyx_v_angle_min = __Pyx_PyInt_As_short(values[3]); if (unlikely((__pyx_v_angle_min == (short)-1) && PyErr_Occurred())) __PYX_ERR(0, 146, __pyx_L3_error)
+    __pyx_v_angle_max = __Pyx_PyInt_As_short(values[4]); if (unlikely((__pyx_v_angle_max == (short)-1) && PyErr_Occurred())) __PYX_ERR(0, 146, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("servoAttach", 1, 5, 5, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(1, 123, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("servoAttach", 1, 5, 5, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 146, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("pyiArduinoI2Cexpander.pyiArduinoI2Cexpander.pyiArduinoI2Cexpander.servoAttach", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -3003,7 +3068,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("servoAttach", 0);
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":124
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":147
  * 
  *     def servoAttach(self, unsigned char pin, unsigned short width_min, unsigned short width_max, short angle_min, short angle_max):
  *         self.c_expander.servoAttach(pin, width_min, width_max, angle_min, angle_max)             # <<<<<<<<<<<<<<
@@ -3012,7 +3077,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
  */
   __pyx_v_self->c_expander.servoAttach(__pyx_v_pin, __pyx_v_width_min, __pyx_v_width_max, __pyx_v_angle_min, __pyx_v_angle_max);
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":123
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":146
  *         self.c_expander.freqPWM(frequency)
  * 
  *     def servoAttach(self, unsigned char pin, unsigned short width_min, unsigned short width_max, short angle_min, short angle_max):             # <<<<<<<<<<<<<<
@@ -3027,7 +3092,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
   return __pyx_r;
 }
 
-/* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":126
+/* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":149
  *         self.c_expander.servoAttach(pin, width_min, width_max, angle_min, angle_max)
  * 
  *     def servoWrite(self, unsigned char pin, short angle):             # <<<<<<<<<<<<<<
@@ -3066,11 +3131,11 @@ static PyObject *__pyx_pw_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_angle)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("servoWrite", 1, 2, 2, 1); __PYX_ERR(1, 126, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("servoWrite", 1, 2, 2, 1); __PYX_ERR(0, 149, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "servoWrite") < 0)) __PYX_ERR(1, 126, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "servoWrite") < 0)) __PYX_ERR(0, 149, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -3078,12 +3143,12 @@ static PyObject *__pyx_pw_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_pin = __Pyx_PyInt_As_unsigned_char(values[0]); if (unlikely((__pyx_v_pin == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(1, 126, __pyx_L3_error)
-    __pyx_v_angle = __Pyx_PyInt_As_short(values[1]); if (unlikely((__pyx_v_angle == (short)-1) && PyErr_Occurred())) __PYX_ERR(1, 126, __pyx_L3_error)
+    __pyx_v_pin = __Pyx_PyInt_As_unsigned_char(values[0]); if (unlikely((__pyx_v_pin == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 149, __pyx_L3_error)
+    __pyx_v_angle = __Pyx_PyInt_As_short(values[1]); if (unlikely((__pyx_v_angle == (short)-1) && PyErr_Occurred())) __PYX_ERR(0, 149, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("servoWrite", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(1, 126, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("servoWrite", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 149, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("pyiArduinoI2Cexpander.pyiArduinoI2Cexpander.pyiArduinoI2Cexpander.servoWrite", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -3101,7 +3166,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("servoWrite", 0);
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":127
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":150
  * 
  *     def servoWrite(self, unsigned char pin, short angle):
  *         self.c_expander.servoWrite(pin, angle)             # <<<<<<<<<<<<<<
@@ -3110,7 +3175,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
  */
   __pyx_v_self->c_expander.servoWrite(__pyx_v_pin, __pyx_v_angle);
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":126
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":149
  *         self.c_expander.servoAttach(pin, width_min, width_max, angle_min, angle_max)
  * 
  *     def servoWrite(self, unsigned char pin, short angle):             # <<<<<<<<<<<<<<
@@ -3125,7 +3190,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
   return __pyx_r;
 }
 
-/* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":129
+/* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":152
  *         self.c_expander.servoWrite(pin, angle)
  * 
  *     def servoWriteMicroseconds(self, unsigned char pin, unsigned short width):             # <<<<<<<<<<<<<<
@@ -3164,11 +3229,11 @@ static PyObject *__pyx_pw_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_width)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("servoWriteMicroseconds", 1, 2, 2, 1); __PYX_ERR(1, 129, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("servoWriteMicroseconds", 1, 2, 2, 1); __PYX_ERR(0, 152, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "servoWriteMicroseconds") < 0)) __PYX_ERR(1, 129, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "servoWriteMicroseconds") < 0)) __PYX_ERR(0, 152, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -3176,12 +3241,12 @@ static PyObject *__pyx_pw_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_pin = __Pyx_PyInt_As_unsigned_char(values[0]); if (unlikely((__pyx_v_pin == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(1, 129, __pyx_L3_error)
-    __pyx_v_width = __Pyx_PyInt_As_unsigned_short(values[1]); if (unlikely((__pyx_v_width == (unsigned short)-1) && PyErr_Occurred())) __PYX_ERR(1, 129, __pyx_L3_error)
+    __pyx_v_pin = __Pyx_PyInt_As_unsigned_char(values[0]); if (unlikely((__pyx_v_pin == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 152, __pyx_L3_error)
+    __pyx_v_width = __Pyx_PyInt_As_unsigned_short(values[1]); if (unlikely((__pyx_v_width == (unsigned short)-1) && PyErr_Occurred())) __PYX_ERR(0, 152, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("servoWriteMicroseconds", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(1, 129, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("servoWriteMicroseconds", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 152, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("pyiArduinoI2Cexpander.pyiArduinoI2Cexpander.pyiArduinoI2Cexpander.servoWriteMicroseconds", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -3199,7 +3264,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("servoWriteMicroseconds", 0);
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":130
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":153
  * 
  *     def servoWriteMicroseconds(self, unsigned char pin, unsigned short width):
  *         self.c_expander.servoWriteMicroseconds(pin, width)             # <<<<<<<<<<<<<<
@@ -3208,7 +3273,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
  */
   __pyx_v_self->c_expander.servoWriteMicroseconds(__pyx_v_pin, __pyx_v_width);
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":129
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":152
  *         self.c_expander.servoWrite(pin, angle)
  * 
  *     def servoWriteMicroseconds(self, unsigned char pin, unsigned short width):             # <<<<<<<<<<<<<<
@@ -3223,7 +3288,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
   return __pyx_r;
 }
 
-/* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":132
+/* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":155
  *         self.c_expander.servoWriteMicroseconds(pin, width)
  * 
  *     def changeBus(self, char* bus):             # <<<<<<<<<<<<<<
@@ -3239,7 +3304,7 @@ static PyObject *__pyx_pw_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("changeBus (wrapper)", 0);
   assert(__pyx_arg_bus); {
-    __pyx_v_bus = __Pyx_PyObject_AsWritableString(__pyx_arg_bus); if (unlikely((!__pyx_v_bus) && PyErr_Occurred())) __PYX_ERR(1, 132, __pyx_L3_error)
+    __pyx_v_bus = __Pyx_PyObject_AsWritableString(__pyx_arg_bus); if (unlikely((!__pyx_v_bus) && PyErr_Occurred())) __PYX_ERR(0, 155, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -3259,7 +3324,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("changeBus", 0);
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":133
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":156
  * 
  *     def changeBus(self, char* bus):
  *         self.c_expander.changeBus(bus)             # <<<<<<<<<<<<<<
@@ -3268,7 +3333,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
  */
   __pyx_v_self->c_expander.changeBus(__pyx_v_bus);
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":132
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":155
  *         self.c_expander.servoWriteMicroseconds(pin, width)
  * 
  *     def changeBus(self, char* bus):             # <<<<<<<<<<<<<<
@@ -3283,7 +3348,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
   return __pyx_r;
 }
 
-/* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":135
+/* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":158
  *         self.c_expander.changeBus(bus)
  * 
  *     def mymap(self, long x, long in_min, long in_max, long out_min, long out_max):             # <<<<<<<<<<<<<<
@@ -3330,29 +3395,29 @@ static PyObject *__pyx_pw_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_in_min)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("mymap", 1, 5, 5, 1); __PYX_ERR(1, 135, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("mymap", 1, 5, 5, 1); __PYX_ERR(0, 158, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_in_max)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("mymap", 1, 5, 5, 2); __PYX_ERR(1, 135, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("mymap", 1, 5, 5, 2); __PYX_ERR(0, 158, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  3:
         if (likely((values[3] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_out_min)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("mymap", 1, 5, 5, 3); __PYX_ERR(1, 135, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("mymap", 1, 5, 5, 3); __PYX_ERR(0, 158, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  4:
         if (likely((values[4] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_out_max)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("mymap", 1, 5, 5, 4); __PYX_ERR(1, 135, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("mymap", 1, 5, 5, 4); __PYX_ERR(0, 158, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "mymap") < 0)) __PYX_ERR(1, 135, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "mymap") < 0)) __PYX_ERR(0, 158, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 5) {
       goto __pyx_L5_argtuple_error;
@@ -3363,15 +3428,15 @@ static PyObject *__pyx_pw_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
       values[3] = PyTuple_GET_ITEM(__pyx_args, 3);
       values[4] = PyTuple_GET_ITEM(__pyx_args, 4);
     }
-    __pyx_v_x = __Pyx_PyInt_As_long(values[0]); if (unlikely((__pyx_v_x == (long)-1) && PyErr_Occurred())) __PYX_ERR(1, 135, __pyx_L3_error)
-    __pyx_v_in_min = __Pyx_PyInt_As_long(values[1]); if (unlikely((__pyx_v_in_min == (long)-1) && PyErr_Occurred())) __PYX_ERR(1, 135, __pyx_L3_error)
-    __pyx_v_in_max = __Pyx_PyInt_As_long(values[2]); if (unlikely((__pyx_v_in_max == (long)-1) && PyErr_Occurred())) __PYX_ERR(1, 135, __pyx_L3_error)
-    __pyx_v_out_min = __Pyx_PyInt_As_long(values[3]); if (unlikely((__pyx_v_out_min == (long)-1) && PyErr_Occurred())) __PYX_ERR(1, 135, __pyx_L3_error)
-    __pyx_v_out_max = __Pyx_PyInt_As_long(values[4]); if (unlikely((__pyx_v_out_max == (long)-1) && PyErr_Occurred())) __PYX_ERR(1, 135, __pyx_L3_error)
+    __pyx_v_x = __Pyx_PyInt_As_long(values[0]); if (unlikely((__pyx_v_x == (long)-1) && PyErr_Occurred())) __PYX_ERR(0, 158, __pyx_L3_error)
+    __pyx_v_in_min = __Pyx_PyInt_As_long(values[1]); if (unlikely((__pyx_v_in_min == (long)-1) && PyErr_Occurred())) __PYX_ERR(0, 158, __pyx_L3_error)
+    __pyx_v_in_max = __Pyx_PyInt_As_long(values[2]); if (unlikely((__pyx_v_in_max == (long)-1) && PyErr_Occurred())) __PYX_ERR(0, 158, __pyx_L3_error)
+    __pyx_v_out_min = __Pyx_PyInt_As_long(values[3]); if (unlikely((__pyx_v_out_min == (long)-1) && PyErr_Occurred())) __PYX_ERR(0, 158, __pyx_L3_error)
+    __pyx_v_out_max = __Pyx_PyInt_As_long(values[4]); if (unlikely((__pyx_v_out_max == (long)-1) && PyErr_Occurred())) __PYX_ERR(0, 158, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("mymap", 1, 5, 5, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(1, 135, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("mymap", 1, 5, 5, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 158, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("pyiArduinoI2Cexpander.pyiArduinoI2Cexpander.pyiArduinoI2Cexpander.mymap", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -3390,19 +3455,19 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("mymap", 0);
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":136
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":159
  * 
  *     def mymap(self, long x, long in_min, long in_max, long out_min, long out_max):
  *         return self.c_expander.map(x, in_min, in_max, out_min, out_max)             # <<<<<<<<<<<<<<
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_long(__pyx_v_self->c_expander.map(__pyx_v_x, __pyx_v_in_min, __pyx_v_in_max, __pyx_v_out_min, __pyx_v_out_max)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 136, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_long(__pyx_v_self->c_expander.map(__pyx_v_x, __pyx_v_in_min, __pyx_v_in_max, __pyx_v_out_min, __pyx_v_out_max)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 159, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":135
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":158
  *         self.c_expander.changeBus(bus)
  * 
  *     def mymap(self, long x, long in_min, long in_max, long out_min, long out_max):             # <<<<<<<<<<<<<<
@@ -3451,11 +3516,11 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple_, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__3, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 2, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __PYX_ERR(0, 2, __pyx_L1_error)
+  __PYX_ERR(1, 2, __pyx_L1_error)
 
   /* "(tree fragment)":1
  * def __reduce_cython__(self):             # <<<<<<<<<<<<<<
@@ -3504,11 +3569,11 @@ static PyObject *__pyx_pf_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_21pyiA
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")             # <<<<<<<<<<<<<<
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__2, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 4, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__4, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __PYX_ERR(0, 4, __pyx_L1_error)
+  __PYX_ERR(1, 4, __pyx_L1_error)
 
   /* "(tree fragment)":3
  * def __reduce_cython__(self):
@@ -3703,6 +3768,8 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_EXP_BIT_SCH, __pyx_k_EXP_BIT_SCH, sizeof(__pyx_k_EXP_BIT_SCH), 0, 0, 1, 1},
   {&__pyx_n_s_EXP_BIT_TYP, __pyx_k_EXP_BIT_TYP, sizeof(__pyx_k_EXP_BIT_TYP), 0, 0, 1, 1},
   {&__pyx_n_s_HIGH, __pyx_k_HIGH, sizeof(__pyx_k_HIGH), 0, 0, 1, 1},
+  {&__pyx_kp_u_I2C_raspi_config_https_wiki_iar, __pyx_k_I2C_raspi_config_https_wiki_iar, sizeof(__pyx_k_I2C_raspi_config_https_wiki_iar), 0, 1, 0, 0},
+  {&__pyx_kp_u_I2C_raspi_config_https_wiki_iar_2, __pyx_k_I2C_raspi_config_https_wiki_iar_2, sizeof(__pyx_k_I2C_raspi_config_https_wiki_iar_2), 0, 1, 0, 0},
   {&__pyx_n_s_INPUT, __pyx_k_INPUT, sizeof(__pyx_k_INPUT), 0, 0, 1, 1},
   {&__pyx_n_s_LOW, __pyx_k_LOW, sizeof(__pyx_k_LOW), 0, 0, 1, 1},
   {&__pyx_n_s_NO_BEGIN, __pyx_k_NO_BEGIN, sizeof(__pyx_k_NO_BEGIN), 0, 0, 1, 1},
@@ -3745,6 +3812,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_auto, __pyx_k_auto, sizeof(__pyx_k_auto), 0, 0, 1, 1},
   {&__pyx_n_s_cline_in_traceback, __pyx_k_cline_in_traceback, sizeof(__pyx_k_cline_in_traceback), 0, 0, 1, 1},
   {&__pyx_n_s_getstate, __pyx_k_getstate, sizeof(__pyx_k_getstate), 0, 0, 1, 1},
+  {&__pyx_n_s_import, __pyx_k_import, sizeof(__pyx_k_import), 0, 0, 1, 1},
   {&__pyx_n_s_in_max, __pyx_k_in_max, sizeof(__pyx_k_in_max), 0, 0, 1, 1},
   {&__pyx_n_s_in_min, __pyx_k_in_min, sizeof(__pyx_k_in_min), 0, 0, 1, 1},
   {&__pyx_n_s_io_dir, __pyx_k_io_dir, sizeof(__pyx_k_io_dir), 0, 0, 1, 1},
@@ -3757,6 +3825,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_out_max, __pyx_k_out_max, sizeof(__pyx_k_out_max), 0, 0, 1, 1},
   {&__pyx_n_s_out_min, __pyx_k_out_min, sizeof(__pyx_k_out_min), 0, 0, 1, 1},
   {&__pyx_n_s_pin, __pyx_k_pin, sizeof(__pyx_k_pin), 0, 0, 1, 1},
+  {&__pyx_n_s_print, __pyx_k_print, sizeof(__pyx_k_print), 0, 0, 1, 1},
   {&__pyx_n_s_pull, __pyx_k_pull, sizeof(__pyx_k_pull), 0, 0, 1, 1},
   {&__pyx_n_s_pyiArduinoI2Cexpander, __pyx_k_pyiArduinoI2Cexpander, sizeof(__pyx_k_pyiArduinoI2Cexpander), 0, 0, 1, 1},
   {&__pyx_n_s_reduce, __pyx_k_reduce, sizeof(__pyx_k_reduce), 0, 0, 1, 1},
@@ -3764,7 +3833,9 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_reduce_ex, __pyx_k_reduce_ex, sizeof(__pyx_k_reduce_ex), 0, 0, 1, 1},
   {&__pyx_n_s_setstate, __pyx_k_setstate, sizeof(__pyx_k_setstate), 0, 0, 1, 1},
   {&__pyx_n_s_setstate_cython, __pyx_k_setstate_cython, sizeof(__pyx_k_setstate_cython), 0, 0, 1, 1},
+  {&__pyx_n_s_sleep, __pyx_k_sleep, sizeof(__pyx_k_sleep), 0, 0, 1, 1},
   {&__pyx_n_s_test, __pyx_k_test, sizeof(__pyx_k_test), 0, 0, 1, 1},
+  {&__pyx_n_s_time, __pyx_k_time, sizeof(__pyx_k_time), 0, 0, 1, 1},
   {&__pyx_n_s_width, __pyx_k_width, sizeof(__pyx_k_width), 0, 0, 1, 1},
   {&__pyx_n_s_width_max, __pyx_k_width_max, sizeof(__pyx_k_width_max), 0, 0, 1, 1},
   {&__pyx_n_s_width_min, __pyx_k_width_min, sizeof(__pyx_k_width_min), 0, 0, 1, 1},
@@ -3772,7 +3843,8 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {0, 0, 0, 0, 0, 0, 0}
 };
 static CYTHON_SMALL_CODE int __Pyx_InitCachedBuiltins(void) {
-  __pyx_builtin_TypeError = __Pyx_GetBuiltinName(__pyx_n_s_TypeError); if (!__pyx_builtin_TypeError) __PYX_ERR(0, 2, __pyx_L1_error)
+  __pyx_builtin_print = __Pyx_GetBuiltinName(__pyx_n_s_print); if (!__pyx_builtin_print) __PYX_ERR(0, 70, __pyx_L1_error)
+  __pyx_builtin_TypeError = __Pyx_GetBuiltinName(__pyx_n_s_TypeError); if (!__pyx_builtin_TypeError) __PYX_ERR(1, 2, __pyx_L1_error)
   return 0;
   __pyx_L1_error:;
   return -1;
@@ -3782,24 +3854,46 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":70
+ *                 if not self.c_expander.begin():
+ * 
+ *                     print("  .\n"             # <<<<<<<<<<<<<<
+ *                           "    ,"
+ *                           "     I2C.\n"
+ */
+  __pyx_tuple_ = PyTuple_Pack(1, __pyx_kp_u_I2C_raspi_config_https_wiki_iar); if (unlikely(!__pyx_tuple_)) __PYX_ERR(0, 70, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple_);
+  __Pyx_GIVEREF(__pyx_tuple_);
+
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":85
+ *                 if not self.c_expander.begin():
+ * 
+ *                     print("  .\n"             # <<<<<<<<<<<<<<
+ *                           "    , "
+ *                           "     I2C.\n"
+ */
+  __pyx_tuple__2 = PyTuple_Pack(1, __pyx_kp_u_I2C_raspi_config_https_wiki_iar_2); if (unlikely(!__pyx_tuple__2)) __PYX_ERR(0, 85, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__2);
+  __Pyx_GIVEREF(__pyx_tuple__2);
+
   /* "(tree fragment)":2
  * def __reduce_cython__(self):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")             # <<<<<<<<<<<<<<
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  */
-  __pyx_tuple_ = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple_)) __PYX_ERR(0, 2, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple_);
-  __Pyx_GIVEREF(__pyx_tuple_);
+  __pyx_tuple__3 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__3)) __PYX_ERR(1, 2, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__3);
+  __Pyx_GIVEREF(__pyx_tuple__3);
 
   /* "(tree fragment)":4
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")             # <<<<<<<<<<<<<<
  */
-  __pyx_tuple__2 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__2)) __PYX_ERR(0, 4, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__2);
-  __Pyx_GIVEREF(__pyx_tuple__2);
+  __pyx_tuple__4 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__4)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__4);
+  __Pyx_GIVEREF(__pyx_tuple__4);
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
@@ -3808,37 +3902,37 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
 }
 
 static CYTHON_SMALL_CODE int __Pyx_InitGlobals(void) {
-  if (__Pyx_InitStrings(__pyx_string_tab) < 0) __PYX_ERR(1, 1, __pyx_L1_error);
-  __pyx_int_0 = PyInt_FromLong(0); if (unlikely(!__pyx_int_0)) __PYX_ERR(1, 1, __pyx_L1_error)
-  __pyx_int_1 = PyInt_FromLong(1); if (unlikely(!__pyx_int_1)) __PYX_ERR(1, 1, __pyx_L1_error)
-  __pyx_int_2 = PyInt_FromLong(2); if (unlikely(!__pyx_int_2)) __PYX_ERR(1, 1, __pyx_L1_error)
-  __pyx_int_3 = PyInt_FromLong(3); if (unlikely(!__pyx_int_3)) __PYX_ERR(1, 1, __pyx_L1_error)
-  __pyx_int_4 = PyInt_FromLong(4); if (unlikely(!__pyx_int_4)) __PYX_ERR(1, 1, __pyx_L1_error)
-  __pyx_int_5 = PyInt_FromLong(5); if (unlikely(!__pyx_int_5)) __PYX_ERR(1, 1, __pyx_L1_error)
-  __pyx_int_6 = PyInt_FromLong(6); if (unlikely(!__pyx_int_6)) __PYX_ERR(1, 1, __pyx_L1_error)
-  __pyx_int_7 = PyInt_FromLong(7); if (unlikely(!__pyx_int_7)) __PYX_ERR(1, 1, __pyx_L1_error)
-  __pyx_int_8 = PyInt_FromLong(8); if (unlikely(!__pyx_int_8)) __PYX_ERR(1, 1, __pyx_L1_error)
-  __pyx_int_9 = PyInt_FromLong(9); if (unlikely(!__pyx_int_9)) __PYX_ERR(1, 1, __pyx_L1_error)
-  __pyx_int_10 = PyInt_FromLong(10); if (unlikely(!__pyx_int_10)) __PYX_ERR(1, 1, __pyx_L1_error)
-  __pyx_int_11 = PyInt_FromLong(11); if (unlikely(!__pyx_int_11)) __PYX_ERR(1, 1, __pyx_L1_error)
-  __pyx_int_12 = PyInt_FromLong(12); if (unlikely(!__pyx_int_12)) __PYX_ERR(1, 1, __pyx_L1_error)
-  __pyx_int_13 = PyInt_FromLong(13); if (unlikely(!__pyx_int_13)) __PYX_ERR(1, 1, __pyx_L1_error)
-  __pyx_int_14 = PyInt_FromLong(14); if (unlikely(!__pyx_int_14)) __PYX_ERR(1, 1, __pyx_L1_error)
-  __pyx_int_16 = PyInt_FromLong(16); if (unlikely(!__pyx_int_16)) __PYX_ERR(1, 1, __pyx_L1_error)
-  __pyx_int_17 = PyInt_FromLong(17); if (unlikely(!__pyx_int_17)) __PYX_ERR(1, 1, __pyx_L1_error)
-  __pyx_int_18 = PyInt_FromLong(18); if (unlikely(!__pyx_int_18)) __PYX_ERR(1, 1, __pyx_L1_error)
-  __pyx_int_19 = PyInt_FromLong(19); if (unlikely(!__pyx_int_19)) __PYX_ERR(1, 1, __pyx_L1_error)
-  __pyx_int_20 = PyInt_FromLong(20); if (unlikely(!__pyx_int_20)) __PYX_ERR(1, 1, __pyx_L1_error)
-  __pyx_int_21 = PyInt_FromLong(21); if (unlikely(!__pyx_int_21)) __PYX_ERR(1, 1, __pyx_L1_error)
-  __pyx_int_22 = PyInt_FromLong(22); if (unlikely(!__pyx_int_22)) __PYX_ERR(1, 1, __pyx_L1_error)
-  __pyx_int_23 = PyInt_FromLong(23); if (unlikely(!__pyx_int_23)) __PYX_ERR(1, 1, __pyx_L1_error)
-  __pyx_int_24 = PyInt_FromLong(24); if (unlikely(!__pyx_int_24)) __PYX_ERR(1, 1, __pyx_L1_error)
-  __pyx_int_32 = PyInt_FromLong(32); if (unlikely(!__pyx_int_32)) __PYX_ERR(1, 1, __pyx_L1_error)
-  __pyx_int_60 = PyInt_FromLong(60); if (unlikely(!__pyx_int_60)) __PYX_ERR(1, 1, __pyx_L1_error)
-  __pyx_int_64 = PyInt_FromLong(64); if (unlikely(!__pyx_int_64)) __PYX_ERR(1, 1, __pyx_L1_error)
-  __pyx_int_128 = PyInt_FromLong(128); if (unlikely(!__pyx_int_128)) __PYX_ERR(1, 1, __pyx_L1_error)
-  __pyx_int_195 = PyInt_FromLong(195); if (unlikely(!__pyx_int_195)) __PYX_ERR(1, 1, __pyx_L1_error)
-  __pyx_int_255 = PyInt_FromLong(255); if (unlikely(!__pyx_int_255)) __PYX_ERR(1, 1, __pyx_L1_error)
+  if (__Pyx_InitStrings(__pyx_string_tab) < 0) __PYX_ERR(0, 1, __pyx_L1_error);
+  __pyx_int_0 = PyInt_FromLong(0); if (unlikely(!__pyx_int_0)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_int_1 = PyInt_FromLong(1); if (unlikely(!__pyx_int_1)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_int_2 = PyInt_FromLong(2); if (unlikely(!__pyx_int_2)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_int_3 = PyInt_FromLong(3); if (unlikely(!__pyx_int_3)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_int_4 = PyInt_FromLong(4); if (unlikely(!__pyx_int_4)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_int_5 = PyInt_FromLong(5); if (unlikely(!__pyx_int_5)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_int_6 = PyInt_FromLong(6); if (unlikely(!__pyx_int_6)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_int_7 = PyInt_FromLong(7); if (unlikely(!__pyx_int_7)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_int_8 = PyInt_FromLong(8); if (unlikely(!__pyx_int_8)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_int_9 = PyInt_FromLong(9); if (unlikely(!__pyx_int_9)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_int_10 = PyInt_FromLong(10); if (unlikely(!__pyx_int_10)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_int_11 = PyInt_FromLong(11); if (unlikely(!__pyx_int_11)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_int_12 = PyInt_FromLong(12); if (unlikely(!__pyx_int_12)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_int_13 = PyInt_FromLong(13); if (unlikely(!__pyx_int_13)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_int_14 = PyInt_FromLong(14); if (unlikely(!__pyx_int_14)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_int_16 = PyInt_FromLong(16); if (unlikely(!__pyx_int_16)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_int_17 = PyInt_FromLong(17); if (unlikely(!__pyx_int_17)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_int_18 = PyInt_FromLong(18); if (unlikely(!__pyx_int_18)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_int_19 = PyInt_FromLong(19); if (unlikely(!__pyx_int_19)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_int_20 = PyInt_FromLong(20); if (unlikely(!__pyx_int_20)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_int_21 = PyInt_FromLong(21); if (unlikely(!__pyx_int_21)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_int_22 = PyInt_FromLong(22); if (unlikely(!__pyx_int_22)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_int_23 = PyInt_FromLong(23); if (unlikely(!__pyx_int_23)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_int_24 = PyInt_FromLong(24); if (unlikely(!__pyx_int_24)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_int_32 = PyInt_FromLong(32); if (unlikely(!__pyx_int_32)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_int_60 = PyInt_FromLong(60); if (unlikely(!__pyx_int_60)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_int_64 = PyInt_FromLong(64); if (unlikely(!__pyx_int_64)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_int_128 = PyInt_FromLong(128); if (unlikely(!__pyx_int_128)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_int_195 = PyInt_FromLong(195); if (unlikely(!__pyx_int_195)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_int_255 = PyInt_FromLong(255); if (unlikely(!__pyx_int_255)) __PYX_ERR(0, 1, __pyx_L1_error)
   return 0;
   __pyx_L1_error:;
   return -1;
@@ -3880,15 +3974,15 @@ static int __Pyx_modinit_type_init_code(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__Pyx_modinit_type_init_code", 0);
   /*--- Type init code ---*/
-  if (PyType_Ready(&__pyx_type_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_pyiArduinoI2Cexpander) < 0) __PYX_ERR(1, 56, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_pyiArduinoI2Cexpander) < 0) __PYX_ERR(0, 57, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_pyiArduinoI2Cexpander.tp_print = 0;
   #endif
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_pyiArduinoI2Cexpander.tp_dictoffset && __pyx_type_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_pyiArduinoI2Cexpander.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_pyiArduinoI2Cexpander.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_pyiArduinoI2Cexpander, (PyObject *)&__pyx_type_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_pyiArduinoI2Cexpander) < 0) __PYX_ERR(1, 56, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_pyiArduinoI2Cexpander) < 0) __PYX_ERR(1, 56, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_pyiArduinoI2Cexpander, (PyObject *)&__pyx_type_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_pyiArduinoI2Cexpander) < 0) __PYX_ERR(0, 57, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_pyiArduinoI2Cexpander) < 0) __PYX_ERR(0, 57, __pyx_L1_error)
   __pyx_ptype_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_pyiArduinoI2Cexpander = &__pyx_type_21pyiArduinoI2Cexpander_21pyiArduinoI2Cexpander_pyiArduinoI2Cexpander;
   __Pyx_RefNannyFinishContext();
   return 0;
@@ -4014,6 +4108,7 @@ static CYTHON_SMALL_CODE int __pyx_pymod_exec_pyiArduinoI2Cexpander(PyObject *__
 #endif
 {
   PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
   __Pyx_RefNannyDeclarations
   #if CYTHON_PEP489_MULTI_PHASE_INIT
   if (__pyx_m) {
@@ -4034,30 +4129,30 @@ if (!__Pyx_RefNanny) {
 }
 #endif
   __Pyx_RefNannySetupContext("__Pyx_PyMODINIT_FUNC PyInit_pyiArduinoI2Cexpander(void)", 0);
-  if (__Pyx_check_binary_version() < 0) __PYX_ERR(1, 1, __pyx_L1_error)
+  if (__Pyx_check_binary_version() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #ifdef __Pxy_PyFrame_Initialize_Offsets
   __Pxy_PyFrame_Initialize_Offsets();
   #endif
-  __pyx_empty_tuple = PyTuple_New(0); if (unlikely(!__pyx_empty_tuple)) __PYX_ERR(1, 1, __pyx_L1_error)
-  __pyx_empty_bytes = PyBytes_FromStringAndSize("", 0); if (unlikely(!__pyx_empty_bytes)) __PYX_ERR(1, 1, __pyx_L1_error)
-  __pyx_empty_unicode = PyUnicode_FromStringAndSize("", 0); if (unlikely(!__pyx_empty_unicode)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_empty_tuple = PyTuple_New(0); if (unlikely(!__pyx_empty_tuple)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_empty_bytes = PyBytes_FromStringAndSize("", 0); if (unlikely(!__pyx_empty_bytes)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_empty_unicode = PyUnicode_FromStringAndSize("", 0); if (unlikely(!__pyx_empty_unicode)) __PYX_ERR(0, 1, __pyx_L1_error)
   #ifdef __Pyx_CyFunction_USED
-  if (__pyx_CyFunction_init() < 0) __PYX_ERR(1, 1, __pyx_L1_error)
+  if (__pyx_CyFunction_init() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
   #ifdef __Pyx_FusedFunction_USED
-  if (__pyx_FusedFunction_init() < 0) __PYX_ERR(1, 1, __pyx_L1_error)
+  if (__pyx_FusedFunction_init() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
   #ifdef __Pyx_Coroutine_USED
-  if (__pyx_Coroutine_init() < 0) __PYX_ERR(1, 1, __pyx_L1_error)
+  if (__pyx_Coroutine_init() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
   #ifdef __Pyx_Generator_USED
-  if (__pyx_Generator_init() < 0) __PYX_ERR(1, 1, __pyx_L1_error)
+  if (__pyx_Generator_init() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
   #ifdef __Pyx_AsyncGen_USED
-  if (__pyx_AsyncGen_init() < 0) __PYX_ERR(1, 1, __pyx_L1_error)
+  if (__pyx_AsyncGen_init() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
   #ifdef __Pyx_StopAsyncIteration_USED
-  if (__pyx_StopAsyncIteration_init() < 0) __PYX_ERR(1, 1, __pyx_L1_error)
+  if (__pyx_StopAsyncIteration_init() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
   /*--- Library function declarations ---*/
   /*--- Threads initialization code ---*/
@@ -4076,28 +4171,28 @@ if (!__Pyx_RefNanny) {
   #else
   __pyx_m = PyModule_Create(&__pyx_moduledef);
   #endif
-  if (unlikely(!__pyx_m)) __PYX_ERR(1, 1, __pyx_L1_error)
+  if (unlikely(!__pyx_m)) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
-  __pyx_d = PyModule_GetDict(__pyx_m); if (unlikely(!__pyx_d)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_d = PyModule_GetDict(__pyx_m); if (unlikely(!__pyx_d)) __PYX_ERR(0, 1, __pyx_L1_error)
   Py_INCREF(__pyx_d);
-  __pyx_b = PyImport_AddModule(__Pyx_BUILTIN_MODULE_NAME); if (unlikely(!__pyx_b)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_b = PyImport_AddModule(__Pyx_BUILTIN_MODULE_NAME); if (unlikely(!__pyx_b)) __PYX_ERR(0, 1, __pyx_L1_error)
   Py_INCREF(__pyx_b);
-  __pyx_cython_runtime = PyImport_AddModule((char *) "cython_runtime"); if (unlikely(!__pyx_cython_runtime)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_cython_runtime = PyImport_AddModule((char *) "cython_runtime"); if (unlikely(!__pyx_cython_runtime)) __PYX_ERR(0, 1, __pyx_L1_error)
   Py_INCREF(__pyx_cython_runtime);
-  if (PyObject_SetAttrString(__pyx_m, "__builtins__", __pyx_b) < 0) __PYX_ERR(1, 1, __pyx_L1_error);
+  if (PyObject_SetAttrString(__pyx_m, "__builtins__", __pyx_b) < 0) __PYX_ERR(0, 1, __pyx_L1_error);
   /*--- Initialize various global constants etc. ---*/
-  if (__Pyx_InitGlobals() < 0) __PYX_ERR(1, 1, __pyx_L1_error)
+  if (__Pyx_InitGlobals() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #if PY_MAJOR_VERSION < 3 && (__PYX_DEFAULT_STRING_ENCODING_IS_ASCII || __PYX_DEFAULT_STRING_ENCODING_IS_DEFAULT)
-  if (__Pyx_init_sys_getdefaultencoding_params() < 0) __PYX_ERR(1, 1, __pyx_L1_error)
+  if (__Pyx_init_sys_getdefaultencoding_params() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
   if (__pyx_module_is_main_pyiArduinoI2Cexpander__pyiArduinoI2Cexpander) {
-    if (PyObject_SetAttr(__pyx_m, __pyx_n_s_name, __pyx_n_s_main) < 0) __PYX_ERR(1, 1, __pyx_L1_error)
+    if (PyObject_SetAttr(__pyx_m, __pyx_n_s_name, __pyx_n_s_main) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   }
   #if PY_MAJOR_VERSION >= 3
   {
-    PyObject *modules = PyImport_GetModuleDict(); if (unlikely(!modules)) __PYX_ERR(1, 1, __pyx_L1_error)
+    PyObject *modules = PyImport_GetModuleDict(); if (unlikely(!modules)) __PYX_ERR(0, 1, __pyx_L1_error)
     if (!PyDict_GetItemString(modules, "pyiArduinoI2Cexpander.pyiArduinoI2Cexpander")) {
-      if (unlikely(PyDict_SetItemString(modules, "pyiArduinoI2Cexpander.pyiArduinoI2Cexpander", __pyx_m) < 0)) __PYX_ERR(1, 1, __pyx_L1_error)
+      if (unlikely(PyDict_SetItemString(modules, "pyiArduinoI2Cexpander.pyiArduinoI2Cexpander", __pyx_m) < 0)) __PYX_ERR(0, 1, __pyx_L1_error)
     }
   }
   #endif
@@ -4115,438 +4210,460 @@ if (!__Pyx_RefNanny) {
   (void)__Pyx_modinit_function_import_code();
   /*--- Execution code ---*/
   #if defined(__Pyx_Generator_USED) || defined(__Pyx_Coroutine_USED)
-  if (__Pyx_patch_abc() < 0) __PYX_ERR(1, 1, __pyx_L1_error)
+  if (__Pyx_patch_abc() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":4
- * # cython: language_level = 3
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":5
+ * 
+ * from iarduino_I2C_Expander cimport iarduino_I2C_Expander
+ * from time import sleep             # <<<<<<<<<<<<<<
+ * 
+ * DEF_CHIP_ID_FLASH =  0x3C
+ */
+  __pyx_t_1 = PyList_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 5, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_INCREF(__pyx_n_s_sleep);
+  __Pyx_GIVEREF(__pyx_n_s_sleep);
+  PyList_SET_ITEM(__pyx_t_1, 0, __pyx_n_s_sleep);
+  __pyx_t_2 = __Pyx_Import(__pyx_n_s_time, __pyx_t_1, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 5, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_1 = __Pyx_ImportFrom(__pyx_t_2, __pyx_n_s_sleep); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 5, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_sleep, __pyx_t_1) < 0) __PYX_ERR(0, 5, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":7
+ * from time import sleep
  * 
  * DEF_CHIP_ID_FLASH =  0x3C             # <<<<<<<<<<<<<<
  * DEF_CHIP_ID_METRO =  0xC3
  * DEF_MODEL_EXP   =   0x07
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_DEF_CHIP_ID_FLASH, __pyx_int_60) < 0) __PYX_ERR(1, 4, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_DEF_CHIP_ID_FLASH, __pyx_int_60) < 0) __PYX_ERR(0, 7, __pyx_L1_error)
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":5
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":8
  * 
  * DEF_CHIP_ID_FLASH =  0x3C
  * DEF_CHIP_ID_METRO =  0xC3             # <<<<<<<<<<<<<<
  * DEF_MODEL_EXP   =   0x07
  * 
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_DEF_CHIP_ID_METRO, __pyx_int_195) < 0) __PYX_ERR(1, 5, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_DEF_CHIP_ID_METRO, __pyx_int_195) < 0) __PYX_ERR(0, 8, __pyx_L1_error)
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":6
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":9
  * DEF_CHIP_ID_FLASH =  0x3C
  * DEF_CHIP_ID_METRO =  0xC3
  * DEF_MODEL_EXP   =   0x07             # <<<<<<<<<<<<<<
  * 
  * #   :
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_DEF_MODEL_EXP, __pyx_int_7) < 0) __PYX_ERR(1, 6, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_DEF_MODEL_EXP, __pyx_int_7) < 0) __PYX_ERR(0, 9, __pyx_L1_error)
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":9
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":12
  * 
  * #   :
  * REG_FLAGS_0 = 0x00             # <<<<<<<<<<<<<<
  * REG_BITS_0  = 0x01
  * REG_FLAGS_1 = 0x02
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_REG_FLAGS_0, __pyx_int_0) < 0) __PYX_ERR(1, 9, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_REG_FLAGS_0, __pyx_int_0) < 0) __PYX_ERR(0, 12, __pyx_L1_error)
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":10
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":13
  * #   :
  * REG_FLAGS_0 = 0x00
  * REG_BITS_0  = 0x01             # <<<<<<<<<<<<<<
  * REG_FLAGS_1 = 0x02
  * REG_BITS_1 = 0x03
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_REG_BITS_0, __pyx_int_1) < 0) __PYX_ERR(1, 10, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_REG_BITS_0, __pyx_int_1) < 0) __PYX_ERR(0, 13, __pyx_L1_error)
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":11
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":14
  * REG_FLAGS_0 = 0x00
  * REG_BITS_0  = 0x01
  * REG_FLAGS_1 = 0x02             # <<<<<<<<<<<<<<
  * REG_BITS_1 = 0x03
  * REG_MODEL = 0x04
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_REG_FLAGS_1, __pyx_int_2) < 0) __PYX_ERR(1, 11, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_REG_FLAGS_1, __pyx_int_2) < 0) __PYX_ERR(0, 14, __pyx_L1_error)
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":12
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":15
  * REG_BITS_0  = 0x01
  * REG_FLAGS_1 = 0x02
  * REG_BITS_1 = 0x03             # <<<<<<<<<<<<<<
  * REG_MODEL = 0x04
  * REG_VERSION = 0x05
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_REG_BITS_1, __pyx_int_3) < 0) __PYX_ERR(1, 12, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_REG_BITS_1, __pyx_int_3) < 0) __PYX_ERR(0, 15, __pyx_L1_error)
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":13
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":16
  * REG_FLAGS_1 = 0x02
  * REG_BITS_1 = 0x03
  * REG_MODEL = 0x04             # <<<<<<<<<<<<<<
  * REG_VERSION = 0x05
  * REG_ADDRESS = 0x06
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_REG_MODEL, __pyx_int_4) < 0) __PYX_ERR(1, 13, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_REG_MODEL, __pyx_int_4) < 0) __PYX_ERR(0, 16, __pyx_L1_error)
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":14
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":17
  * REG_BITS_1 = 0x03
  * REG_MODEL = 0x04
  * REG_VERSION = 0x05             # <<<<<<<<<<<<<<
  * REG_ADDRESS = 0x06
  * REG_CHIP_ID = 0x07
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_REG_VERSION, __pyx_int_5) < 0) __PYX_ERR(1, 14, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_REG_VERSION, __pyx_int_5) < 0) __PYX_ERR(0, 17, __pyx_L1_error)
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":15
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":18
  * REG_MODEL = 0x04
  * REG_VERSION = 0x05
  * REG_ADDRESS = 0x06             # <<<<<<<<<<<<<<
  * REG_CHIP_ID = 0x07
  * REG_EXP_FREQUENCY_L = 0x08
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_REG_ADDRESS, __pyx_int_6) < 0) __PYX_ERR(1, 15, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_REG_ADDRESS, __pyx_int_6) < 0) __PYX_ERR(0, 18, __pyx_L1_error)
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":16
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":19
  * REG_VERSION = 0x05
  * REG_ADDRESS = 0x06
  * REG_CHIP_ID = 0x07             # <<<<<<<<<<<<<<
  * REG_EXP_FREQUENCY_L = 0x08
  * REG_EXP_FREQUENCY_H = 0x09
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_REG_CHIP_ID, __pyx_int_7) < 0) __PYX_ERR(1, 16, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_REG_CHIP_ID, __pyx_int_7) < 0) __PYX_ERR(0, 19, __pyx_L1_error)
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":17
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":20
  * REG_ADDRESS = 0x06
  * REG_CHIP_ID = 0x07
  * REG_EXP_FREQUENCY_L = 0x08             # <<<<<<<<<<<<<<
  * REG_EXP_FREQUENCY_H = 0x09
  * REG_EXP_LEVEL_L = 0x0A
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_REG_EXP_FREQUENCY_L, __pyx_int_8) < 0) __PYX_ERR(1, 17, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_REG_EXP_FREQUENCY_L, __pyx_int_8) < 0) __PYX_ERR(0, 20, __pyx_L1_error)
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":18
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":21
  * REG_CHIP_ID = 0x07
  * REG_EXP_FREQUENCY_L = 0x08
  * REG_EXP_FREQUENCY_H = 0x09             # <<<<<<<<<<<<<<
  * REG_EXP_LEVEL_L = 0x0A
  * REG_EXP_LEVEL_H = 0x0B
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_REG_EXP_FREQUENCY_H, __pyx_int_9) < 0) __PYX_ERR(1, 18, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_REG_EXP_FREQUENCY_H, __pyx_int_9) < 0) __PYX_ERR(0, 21, __pyx_L1_error)
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":19
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":22
  * REG_EXP_FREQUENCY_L = 0x08
  * REG_EXP_FREQUENCY_H = 0x09
  * REG_EXP_LEVEL_L = 0x0A             # <<<<<<<<<<<<<<
  * REG_EXP_LEVEL_H = 0x0B
  * REG_EXP_HYSTERESIS_L= 0x0C
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_REG_EXP_LEVEL_L, __pyx_int_10) < 0) __PYX_ERR(1, 19, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_REG_EXP_LEVEL_L, __pyx_int_10) < 0) __PYX_ERR(0, 22, __pyx_L1_error)
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":20
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":23
  * REG_EXP_FREQUENCY_H = 0x09
  * REG_EXP_LEVEL_L = 0x0A
  * REG_EXP_LEVEL_H = 0x0B             # <<<<<<<<<<<<<<
  * REG_EXP_HYSTERESIS_L= 0x0C
  * REG_EXP_HYSTERESIS_H= 0x0D
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_REG_EXP_LEVEL_H, __pyx_int_11) < 0) __PYX_ERR(1, 20, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_REG_EXP_LEVEL_H, __pyx_int_11) < 0) __PYX_ERR(0, 23, __pyx_L1_error)
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":21
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":24
  * REG_EXP_LEVEL_L = 0x0A
  * REG_EXP_LEVEL_H = 0x0B
  * REG_EXP_HYSTERESIS_L= 0x0C             # <<<<<<<<<<<<<<
  * REG_EXP_HYSTERESIS_H= 0x0D
  * REG_EXP_AVERAGING = 0x0E
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_REG_EXP_HYSTERESIS_L, __pyx_int_12) < 0) __PYX_ERR(1, 21, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_REG_EXP_HYSTERESIS_L, __pyx_int_12) < 0) __PYX_ERR(0, 24, __pyx_L1_error)
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":22
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":25
  * REG_EXP_LEVEL_H = 0x0B
  * REG_EXP_HYSTERESIS_L= 0x0C
  * REG_EXP_HYSTERESIS_H= 0x0D             # <<<<<<<<<<<<<<
  * REG_EXP_AVERAGING = 0x0E
  * REG_EXP_DIRECTION = 0x10
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_REG_EXP_HYSTERESIS_H, __pyx_int_13) < 0) __PYX_ERR(1, 22, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_REG_EXP_HYSTERESIS_H, __pyx_int_13) < 0) __PYX_ERR(0, 25, __pyx_L1_error)
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":23
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":26
  * REG_EXP_HYSTERESIS_L= 0x0C
  * REG_EXP_HYSTERESIS_H= 0x0D
  * REG_EXP_AVERAGING = 0x0E             # <<<<<<<<<<<<<<
  * REG_EXP_DIRECTION = 0x10
  * REG_EXP_TYPE = 0x11
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_REG_EXP_AVERAGING, __pyx_int_14) < 0) __PYX_ERR(1, 23, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_REG_EXP_AVERAGING, __pyx_int_14) < 0) __PYX_ERR(0, 26, __pyx_L1_error)
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":24
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":27
  * REG_EXP_HYSTERESIS_H= 0x0D
  * REG_EXP_AVERAGING = 0x0E
  * REG_EXP_DIRECTION = 0x10             # <<<<<<<<<<<<<<
  * REG_EXP_TYPE = 0x11
  * REG_EXP_PULL_UP = 0x12
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_REG_EXP_DIRECTION, __pyx_int_16) < 0) __PYX_ERR(1, 24, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_REG_EXP_DIRECTION, __pyx_int_16) < 0) __PYX_ERR(0, 27, __pyx_L1_error)
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":25
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":28
  * REG_EXP_AVERAGING = 0x0E
  * REG_EXP_DIRECTION = 0x10
  * REG_EXP_TYPE = 0x11             # <<<<<<<<<<<<<<
  * REG_EXP_PULL_UP = 0x12
  * REG_EXP_PULL_DOWN = 0x13
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_REG_EXP_TYPE, __pyx_int_17) < 0) __PYX_ERR(1, 25, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_REG_EXP_TYPE, __pyx_int_17) < 0) __PYX_ERR(0, 28, __pyx_L1_error)
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":26
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":29
  * REG_EXP_DIRECTION = 0x10
  * REG_EXP_TYPE = 0x11
  * REG_EXP_PULL_UP = 0x12             # <<<<<<<<<<<<<<
  * REG_EXP_PULL_DOWN = 0x13
  * REG_EXP_OUT_MODE = 0x14
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_REG_EXP_PULL_UP, __pyx_int_18) < 0) __PYX_ERR(1, 26, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_REG_EXP_PULL_UP, __pyx_int_18) < 0) __PYX_ERR(0, 29, __pyx_L1_error)
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":27
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":30
  * REG_EXP_TYPE = 0x11
  * REG_EXP_PULL_UP = 0x12
  * REG_EXP_PULL_DOWN = 0x13             # <<<<<<<<<<<<<<
  * REG_EXP_OUT_MODE = 0x14
  * REG_EXP_DIGITAL = 0x15
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_REG_EXP_PULL_DOWN, __pyx_int_19) < 0) __PYX_ERR(1, 27, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_REG_EXP_PULL_DOWN, __pyx_int_19) < 0) __PYX_ERR(0, 30, __pyx_L1_error)
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":28
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":31
  * REG_EXP_PULL_UP = 0x12
  * REG_EXP_PULL_DOWN = 0x13
  * REG_EXP_OUT_MODE = 0x14             # <<<<<<<<<<<<<<
  * REG_EXP_DIGITAL = 0x15
  * REG_EXP_WRITE_HIGH = 0x16
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_REG_EXP_OUT_MODE, __pyx_int_20) < 0) __PYX_ERR(1, 28, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_REG_EXP_OUT_MODE, __pyx_int_20) < 0) __PYX_ERR(0, 31, __pyx_L1_error)
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":29
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":32
  * REG_EXP_PULL_DOWN = 0x13
  * REG_EXP_OUT_MODE = 0x14
  * REG_EXP_DIGITAL = 0x15             # <<<<<<<<<<<<<<
  * REG_EXP_WRITE_HIGH = 0x16
  * REG_EXP_WRITE_LOW  = 0x17
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_REG_EXP_DIGITAL, __pyx_int_21) < 0) __PYX_ERR(1, 29, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_REG_EXP_DIGITAL, __pyx_int_21) < 0) __PYX_ERR(0, 32, __pyx_L1_error)
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":30
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":33
  * REG_EXP_OUT_MODE = 0x14
  * REG_EXP_DIGITAL = 0x15
  * REG_EXP_WRITE_HIGH = 0x16             # <<<<<<<<<<<<<<
  * REG_EXP_WRITE_LOW  = 0x17
  * REG_EXP_ANALOG = 0x18
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_REG_EXP_WRITE_HIGH, __pyx_int_22) < 0) __PYX_ERR(1, 30, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_REG_EXP_WRITE_HIGH, __pyx_int_22) < 0) __PYX_ERR(0, 33, __pyx_L1_error)
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":31
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":34
  * REG_EXP_DIGITAL = 0x15
  * REG_EXP_WRITE_HIGH = 0x16
  * REG_EXP_WRITE_LOW  = 0x17             # <<<<<<<<<<<<<<
  * REG_EXP_ANALOG = 0x18
  * EXP_BIT_DIR = 0x80
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_REG_EXP_WRITE_LOW, __pyx_int_23) < 0) __PYX_ERR(1, 31, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_REG_EXP_WRITE_LOW, __pyx_int_23) < 0) __PYX_ERR(0, 34, __pyx_L1_error)
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":32
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":35
  * REG_EXP_WRITE_HIGH = 0x16
  * REG_EXP_WRITE_LOW  = 0x17
  * REG_EXP_ANALOG = 0x18             # <<<<<<<<<<<<<<
  * EXP_BIT_DIR = 0x80
  * EXP_BIT_TYP = 0x40
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_REG_EXP_ANALOG, __pyx_int_24) < 0) __PYX_ERR(1, 32, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_REG_EXP_ANALOG, __pyx_int_24) < 0) __PYX_ERR(0, 35, __pyx_L1_error)
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":33
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":36
  * REG_EXP_WRITE_LOW  = 0x17
  * REG_EXP_ANALOG = 0x18
  * EXP_BIT_DIR = 0x80             # <<<<<<<<<<<<<<
  * EXP_BIT_TYP = 0x40
  * EXP_BIT_PUP = 0x20
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_EXP_BIT_DIR, __pyx_int_128) < 0) __PYX_ERR(1, 33, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_EXP_BIT_DIR, __pyx_int_128) < 0) __PYX_ERR(0, 36, __pyx_L1_error)
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":34
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":37
  * REG_EXP_ANALOG = 0x18
  * EXP_BIT_DIR = 0x80
  * EXP_BIT_TYP = 0x40             # <<<<<<<<<<<<<<
  * EXP_BIT_PUP = 0x20
  * EXP_BIT_PDN = 0x10
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_EXP_BIT_TYP, __pyx_int_64) < 0) __PYX_ERR(1, 34, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_EXP_BIT_TYP, __pyx_int_64) < 0) __PYX_ERR(0, 37, __pyx_L1_error)
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":35
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":38
  * EXP_BIT_DIR = 0x80
  * EXP_BIT_TYP = 0x40
  * EXP_BIT_PUP = 0x20             # <<<<<<<<<<<<<<
  * EXP_BIT_PDN = 0x10
  * EXP_BIT_SCH = 0x08
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_EXP_BIT_PUP, __pyx_int_32) < 0) __PYX_ERR(1, 35, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_EXP_BIT_PUP, __pyx_int_32) < 0) __PYX_ERR(0, 38, __pyx_L1_error)
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":36
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":39
  * EXP_BIT_TYP = 0x40
  * EXP_BIT_PUP = 0x20
  * EXP_BIT_PDN = 0x10             # <<<<<<<<<<<<<<
  * EXP_BIT_SCH = 0x08
  * LOW = 0
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_EXP_BIT_PDN, __pyx_int_16) < 0) __PYX_ERR(1, 36, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_EXP_BIT_PDN, __pyx_int_16) < 0) __PYX_ERR(0, 39, __pyx_L1_error)
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":37
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":40
  * EXP_BIT_PUP = 0x20
  * EXP_BIT_PDN = 0x10
  * EXP_BIT_SCH = 0x08             # <<<<<<<<<<<<<<
  * LOW = 0
  * HIGH = 1
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_EXP_BIT_SCH, __pyx_int_8) < 0) __PYX_ERR(1, 37, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_EXP_BIT_SCH, __pyx_int_8) < 0) __PYX_ERR(0, 40, __pyx_L1_error)
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":38
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":41
  * EXP_BIT_PDN = 0x10
  * EXP_BIT_SCH = 0x08
  * LOW = 0             # <<<<<<<<<<<<<<
  * HIGH = 1
  * INPUT = 0
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_LOW, __pyx_int_0) < 0) __PYX_ERR(1, 38, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_LOW, __pyx_int_0) < 0) __PYX_ERR(0, 41, __pyx_L1_error)
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":39
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":42
  * EXP_BIT_SCH = 0x08
  * LOW = 0
  * HIGH = 1             # <<<<<<<<<<<<<<
  * INPUT = 0
  * OUTPUT = 1
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_HIGH, __pyx_int_1) < 0) __PYX_ERR(1, 39, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_HIGH, __pyx_int_1) < 0) __PYX_ERR(0, 42, __pyx_L1_error)
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":40
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":43
  * LOW = 0
  * HIGH = 1
  * INPUT = 0             # <<<<<<<<<<<<<<
  * OUTPUT = 1
  * DIGITAL = 2
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_INPUT, __pyx_int_0) < 0) __PYX_ERR(1, 40, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_INPUT, __pyx_int_0) < 0) __PYX_ERR(0, 43, __pyx_L1_error)
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":41
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":44
  * HIGH = 1
  * INPUT = 0
  * OUTPUT = 1             # <<<<<<<<<<<<<<
  * DIGITAL = 2
  * ANALOG = 3
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_OUTPUT, __pyx_int_1) < 0) __PYX_ERR(1, 41, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_OUTPUT, __pyx_int_1) < 0) __PYX_ERR(0, 44, __pyx_L1_error)
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":42
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":45
  * INPUT = 0
  * OUTPUT = 1
  * DIGITAL = 2             # <<<<<<<<<<<<<<
  * ANALOG = 3
  * SERVO = 4
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_DIGITAL, __pyx_int_2) < 0) __PYX_ERR(1, 42, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_DIGITAL, __pyx_int_2) < 0) __PYX_ERR(0, 45, __pyx_L1_error)
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":43
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":46
  * OUTPUT = 1
  * DIGITAL = 2
  * ANALOG = 3             # <<<<<<<<<<<<<<
  * SERVO = 4
  * OUT_PUSH_PULL = 5
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_ANALOG, __pyx_int_3) < 0) __PYX_ERR(1, 43, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_ANALOG, __pyx_int_3) < 0) __PYX_ERR(0, 46, __pyx_L1_error)
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":44
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":47
  * DIGITAL = 2
  * ANALOG = 3
  * SERVO = 4             # <<<<<<<<<<<<<<
  * OUT_PUSH_PULL = 5
  * OUT_OPEN_DRAIN = 6
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_SERVO, __pyx_int_4) < 0) __PYX_ERR(1, 44, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_SERVO, __pyx_int_4) < 0) __PYX_ERR(0, 47, __pyx_L1_error)
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":45
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":48
  * ANALOG = 3
  * SERVO = 4
  * OUT_PUSH_PULL = 5             # <<<<<<<<<<<<<<
  * OUT_OPEN_DRAIN = 6
  * PULL_UP = 7
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_OUT_PUSH_PULL, __pyx_int_5) < 0) __PYX_ERR(1, 45, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_OUT_PUSH_PULL, __pyx_int_5) < 0) __PYX_ERR(0, 48, __pyx_L1_error)
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":46
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":49
  * SERVO = 4
  * OUT_PUSH_PULL = 5
  * OUT_OPEN_DRAIN = 6             # <<<<<<<<<<<<<<
  * PULL_UP = 7
  * PULL_DOWN = 8
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_OUT_OPEN_DRAIN, __pyx_int_6) < 0) __PYX_ERR(1, 46, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_OUT_OPEN_DRAIN, __pyx_int_6) < 0) __PYX_ERR(0, 49, __pyx_L1_error)
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":47
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":50
  * OUT_PUSH_PULL = 5
  * OUT_OPEN_DRAIN = 6
  * PULL_UP = 7             # <<<<<<<<<<<<<<
  * PULL_DOWN = 8
  * PULL_NO = 0xFF
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_PULL_UP, __pyx_int_7) < 0) __PYX_ERR(1, 47, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_PULL_UP, __pyx_int_7) < 0) __PYX_ERR(0, 50, __pyx_L1_error)
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":48
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":51
  * OUT_OPEN_DRAIN = 6
  * PULL_UP = 7
  * PULL_DOWN = 8             # <<<<<<<<<<<<<<
  * PULL_NO = 0xFF
  * ALL_PIN = 0xFF
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_PULL_DOWN, __pyx_int_8) < 0) __PYX_ERR(1, 48, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_PULL_DOWN, __pyx_int_8) < 0) __PYX_ERR(0, 51, __pyx_L1_error)
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":49
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":52
  * PULL_UP = 7
  * PULL_DOWN = 8
  * PULL_NO = 0xFF             # <<<<<<<<<<<<<<
  * ALL_PIN = 0xFF
  * 
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_PULL_NO, __pyx_int_255) < 0) __PYX_ERR(1, 49, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_PULL_NO, __pyx_int_255) < 0) __PYX_ERR(0, 52, __pyx_L1_error)
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":50
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":53
  * PULL_DOWN = 8
  * PULL_NO = 0xFF
  * ALL_PIN = 0xFF             # <<<<<<<<<<<<<<
  * 
  * NO_BEGIN = 1
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_ALL_PIN, __pyx_int_255) < 0) __PYX_ERR(1, 50, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_ALL_PIN, __pyx_int_255) < 0) __PYX_ERR(0, 53, __pyx_L1_error)
 
-  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":52
+  /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":55
  * ALL_PIN = 0xFF
  * 
  * NO_BEGIN = 1             # <<<<<<<<<<<<<<
  * 
- * from iarduino_I2C_Expander cimport iarduino_I2C_Expander
+ * cdef class pyiArduinoI2Cexpander:
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_NO_BEGIN, __pyx_int_1) < 0) __PYX_ERR(1, 52, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_NO_BEGIN, __pyx_int_1) < 0) __PYX_ERR(0, 55, __pyx_L1_error)
 
   /* "pyiArduinoI2Cexpander/pyiArduinoI2Cexpander.pyx":1
  * # distutils: language = c++             # <<<<<<<<<<<<<<
  * # cython: language_level = 3
  * 
  */
-  __pyx_t_1 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_test, __pyx_t_1) < 0) __PYX_ERR(1, 1, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_2 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_test, __pyx_t_2) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /*--- Wrapped vars code ---*/
 
   goto __pyx_L0;
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
   if (__pyx_m) {
     if (__pyx_d) {
       __Pyx_AddTraceback("init pyiArduinoI2Cexpander.pyiArduinoI2Cexpander", __pyx_clineno, __pyx_lineno, __pyx_filename);
@@ -5081,6 +5198,85 @@ GOOD:
     Py_XDECREF(setstate);
     Py_XDECREF(setstate_cython);
     return ret;
+}
+
+/* Import */
+static PyObject *__Pyx_Import(PyObject *name, PyObject *from_list, int level) {
+    PyObject *empty_list = 0;
+    PyObject *module = 0;
+    PyObject *global_dict = 0;
+    PyObject *empty_dict = 0;
+    PyObject *list;
+    #if PY_MAJOR_VERSION < 3
+    PyObject *py_import;
+    py_import = __Pyx_PyObject_GetAttrStr(__pyx_b, __pyx_n_s_import);
+    if (!py_import)
+        goto bad;
+    #endif
+    if (from_list)
+        list = from_list;
+    else {
+        empty_list = PyList_New(0);
+        if (!empty_list)
+            goto bad;
+        list = empty_list;
+    }
+    global_dict = PyModule_GetDict(__pyx_m);
+    if (!global_dict)
+        goto bad;
+    empty_dict = PyDict_New();
+    if (!empty_dict)
+        goto bad;
+    {
+        #if PY_MAJOR_VERSION >= 3
+        if (level == -1) {
+            if (strchr(__Pyx_MODULE_NAME, '.')) {
+                module = PyImport_ImportModuleLevelObject(
+                    name, global_dict, empty_dict, list, 1);
+                if (!module) {
+                    if (!PyErr_ExceptionMatches(PyExc_ImportError))
+                        goto bad;
+                    PyErr_Clear();
+                }
+            }
+            level = 0;
+        }
+        #endif
+        if (!module) {
+            #if PY_MAJOR_VERSION < 3
+            PyObject *py_level = PyInt_FromLong(level);
+            if (!py_level)
+                goto bad;
+            module = PyObject_CallFunctionObjArgs(py_import,
+                name, global_dict, empty_dict, list, py_level, (PyObject *)NULL);
+            Py_DECREF(py_level);
+            #else
+            module = PyImport_ImportModuleLevelObject(
+                name, global_dict, empty_dict, list, level);
+            #endif
+        }
+    }
+bad:
+    #if PY_MAJOR_VERSION < 3
+    Py_XDECREF(py_import);
+    #endif
+    Py_XDECREF(empty_list);
+    Py_XDECREF(empty_dict);
+    return module;
+}
+
+/* ImportFrom */
+static PyObject* __Pyx_ImportFrom(PyObject* module, PyObject* name) {
+    PyObject* value = __Pyx_PyObject_GetAttrStr(module, name);
+    if (unlikely(!value) && PyErr_ExceptionMatches(PyExc_AttributeError)) {
+        PyErr_Format(PyExc_ImportError,
+        #if PY_MAJOR_VERSION < 3
+            "cannot import name %.230s", PyString_AS_STRING(name));
+        #else
+            "cannot import name %S", name);
+        #endif
+    }
+    return value;
 }
 
 /* PyDictVersioning */

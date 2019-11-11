@@ -1,6 +1,9 @@
 # distutils: language = c++
 # cython: language_level = 3
 
+from iarduino_I2C_Expander cimport iarduino_I2C_Expander
+from time import sleep
+
 DEF_CHIP_ID_FLASH =  0x3C        
 DEF_CHIP_ID_METRO =  0xC3        
 DEF_MODEL_EXP   =   0x07        
@@ -51,20 +54,40 @@ ALL_PIN = 0xFF
 
 NO_BEGIN = 1
 
-from iarduino_I2C_Expander cimport iarduino_I2C_Expander
-
 cdef class pyiArduinoI2Cexpander:
     cdef iarduino_I2C_Expander c_expander
 
     def __cinit__(self, address=None, auto=None):
+
         if address is not None:
+
             self.c_expander = iarduino_I2C_Expander(address)
+
             if auto is None:
-                self.c_expander.begin()
+                #sleep(.5)
+                if not self.c_expander.begin():
+
+                    print("ошибка инициализации модуля.\n"
+                          "Проверьте подключение и адрес модуля,"
+                          " возможно не включен интерфейс I2C.\n"
+                          " Запустите raspi-config и включите интерфейс"
+                          ", инструкция по включению:"
+                          " https://wiki.iarduino.ru/page/raspberry-i2c-spi/")
+
         else:
+
             self.c_expander = iarduino_I2C_Expander()
+
             if auto is None:
-                self.c_expander.begin()
+                #sleep(.5)
+                if not self.c_expander.begin():
+
+                    print("ошибка инициализации модуля.\n"
+                          "Проверьте подключение и адрес модуля, "
+                          " возможно не включен интерфейс I2C.\n"
+                          " Запустите raspi-config и включите интерфейс"
+                          ", инструкция по включению:"
+                          " https://wiki.iarduino.ru/page/raspberry-i2c-spi/")
 
     def begin(self):
         return self.c_expander.begin()
